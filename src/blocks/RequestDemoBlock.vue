@@ -46,11 +46,20 @@ const openForm = () => {
 
   .heading
     font-size: 50px
+    letter-spacing: -0.06em
+
+    @media(max-width: 870px)
+      font-size: 32px
+      letter-spacing: -0.06em
 
   .text
     font-weight: 500
     font-size: 18px
     letter-spacing: -0.04em
     margin-top: -16px
+
+    @media(max-width: 870px)
+      font-size: 16px
+      letter-spacing: -0.04em
 
 </style>

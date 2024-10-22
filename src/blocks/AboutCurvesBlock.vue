@@ -39,6 +39,9 @@ const props = defineBlock({
     color: white
     height: 390px
 
+    @media(max-width: 870px)
+      height: auto
+
   .decoration-container__solid-frame
     border: none
     background-color: #171717
@@ -54,6 +57,15 @@ const props = defineBlock({
   gap: 12px
   box-sizing: border-box
 
+  @media(max-width: 870px)
+    padding-top: 400px
+    text-align: center
+
+  .curves-label
+    opacity: 0.6
+    @media(max-width: 870px)
+      justify-content: center
+
   .title
     max-width: 60%
     font-size: 36px
@@ -62,16 +74,44 @@ const props = defineBlock({
     letter-spacing: -0.06em
     white-space: pre-wrap
 
+    @media(max-width: 870px)
+      max-width: 100%
+
   .curves-frame
     position: absolute
     right: 0
     top: 0
+
+    @media(max-width: 870px)
+      left: 0
+      right: auto
 
   .tripleten-preview
     position: absolute
     height: 240px
     right: 35px
     top: 75px
+
+  @media(max-width: 870px)
+    .curves-frame
+      left: calc(50vw - 264px)
+      right: auto
+    .tripleten-preview
+      left: calc(50vw - 230px)
+      right: auto
+
+  @media(max-width: 560px)
+    .curves-frame
+      top: 0
+      left: 0
+      width: 100%
+      object-fit: contain
+
+    .tripleten-preview
+      top: calc(40vw - 135px)
+      left: 7%
+      width: 84%
+      object-fit: contain
 
   .v-button
     align-self: flex-start
@@ -81,5 +121,10 @@ const props = defineBlock({
 
     svg
       margin-right: -6px
+
+    @media(max-width: 870px)
+      margin-top: 24px
+      align-self: center
+
 
 </style>

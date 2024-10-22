@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="policy-info">
-      <a class="app-link" href="#">Политика конфиденциальности</a>
+      <RouterLink class="app-link" to="/privacy-policy">Политика конфиденциальности</RouterLink>
       <a class="app-link" href="#">Условия и положения</a>
     </div>
   </footer>

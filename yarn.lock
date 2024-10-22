@@ -67,10 +67,10 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
-"@curves_digital/builder@^1.1.10":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@curves_digital/builder/-/builder-1.1.10.tgz#4ecb4717c98edea2d044aea472244d59d2a5b7a5"
-  integrity sha512-Il2lFN5oW+dqJ6xaOeFOgtXKI3ER2OO8ADtFBZqCkDVuYJd8zRCVtUauNV8yit41cH893vPCaYVPEUvRKW3omw==
+"@curves_digital/builder@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@curves_digital/builder/-/builder-1.1.11.tgz#221787cec172e3a1cc768a2909568fcd8d12eb68"
+  integrity sha512-s1eLebysF69zzsSY3j5Ho8ZG9XQ8Xy2uj+DNZg/R+62WeXtjPx9++opTDr3/jV1FNRl/3PSJKiUxOsdbVIOMew==
   dependencies:
     "@babel/generator" "^7.24.5"
     "@babel/parser" "^7.24.5"

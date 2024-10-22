@@ -23,7 +23,6 @@ import { CSSProperties, Ref, onMounted, ref, watch } from 'vue';
 import type { VScrollableRef } from './VScrollable.vue';
 import VScrollable from './VScrollable.vue';
 
-
 const props = defineProps<{ items: T[], modelValue?: number }>()
 const emit = defineEmits([ "update:modelValue" ])
 

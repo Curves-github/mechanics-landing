@@ -50,6 +50,7 @@ const openForm = () => {
 
   @media(max-width: 870px)
     height: auto
+    text-align: center
     .decoration-container__inner
       flex-direction: column
 
@@ -65,9 +66,13 @@ const openForm = () => {
 
   .curves-label
     color: var(--text-tertiary-color)
+    margin-bottom: 12px
 
   &:first-child
     border: none
+
+  @media(max-width: 870px)
+    align-items: center
 
 .heading-block__content
   margin: auto 0

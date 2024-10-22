@@ -8,7 +8,9 @@
         <a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{ item.title }}</a>
       </div>
       <VButton class="header__action-button" @click="openForm">Запросить демо</VButton>
+      <BurgerButton :open="menuOpen" @click="menuOpen = !menuOpen"/>
     </header>
+    <MobileMenu v-model:open="menuOpen"/>
   </div>
 </template>
 
@@ -18,6 +20,9 @@ import { useSettings } from '../pageSettings';
 import VButton from './VButton.vue';
 import { useDialogStore } from '../stores/dialogStore';
 import SendRequestDialog from './dialogs/SendRequestDialog.vue';
+import BurgerButton from './BurgerButton.vue';
+import MobileMenu from './MobileMenu.vue';
+import { ref } from 'vue';
 
 const settings = useSettings()
 
@@ -25,6 +30,8 @@ const dialogStore = useDialogStore()
 const openForm = () => {
   dialogStore.open(SendRequestDialog)
 }
+
+const menuOpen = ref(false)
 
 </script>
 
@@ -47,6 +54,16 @@ const openForm = () => {
 
   @media(max-width: 1080px)
     padding: 0 24px
+
+  @media(max-width: 870px)
+    padding: 0 12px
+
+  .burger-button
+    margin-left: auto
+    display: none
+
+    @media(max-width: 870px)
+      display: block
 
 .header__main-logo
   display: block
@@ -78,5 +95,8 @@ const openForm = () => {
   font-size: 14px
   height: 40px
   padding: 0 20px
+
+  @media(max-width: 870px)
+    display: none
 
 </style>

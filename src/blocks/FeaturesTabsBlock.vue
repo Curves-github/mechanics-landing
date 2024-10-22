@@ -78,8 +78,14 @@ const openForm = () => {
 .features-tabs-block 
   height: 500px
 
+  @media(max-width: 870px)
+    height: auto
+
   .decoration-container__inner
     display: flex
+
+    @media(max-width: 870px)
+      flex-direction: column-reverse
 
 .features-tabs__column
   flex: 1 1 50%
@@ -89,6 +95,9 @@ const openForm = () => {
   flex-direction: column
   gap: 20px
   box-sizing: border-box
+  
+  @media(max-width: 870px)
+    padding: 20px
 
   &:first-child
     border-left: none
@@ -115,6 +124,9 @@ const openForm = () => {
   align-items: center
   justify-content: center
   padding: 0
+
+  @media(max-width: 870px)
+    min-height: 80vw
 
   img
     width: 100%

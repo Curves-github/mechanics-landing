@@ -26,4 +26,7 @@
   font-weight: 500
   font-size: 16px
   letter-spacing: -0.04em
+
+  @media(max-width: 870px)
+    font-size: 14px
 </style>

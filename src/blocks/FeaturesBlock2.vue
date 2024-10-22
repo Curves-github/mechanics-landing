@@ -60,10 +60,14 @@ const props = defineBlock({
     @media(max-width: 870px)
       font-size: 32px
       letter-spacing: -0.06em
+      margin: 20px
 
 .features-block-2__item
   padding: 32px
   border-top: 1px solid var(--frame-color)
+
+  @media(max-width: 870px)
+    padding: 20px
 
   &:first-child
     border-top: none
