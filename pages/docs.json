@@ -1,0 +1,24 @@
+{
+  "title": "Механика - Docs",
+  "state": [
+    { 
+      "blockId": "docsLayout",
+      "data": {
+        
+      }
+    }
+  ],
+  "collectionsData": {
+    "docs": {
+      "currentItem": {
+        "id": "test-url-2"
+      }
+    }
+  },
+  "triggerData": {
+    "collection.getAll(\"docs\")": [
+      { "id": "test-url", "url": "test-url", "name": "Начало работы" },
+      { "id": "test-url-2", "url": "test-url-2", "name": "Начало работы" }
+    ]
+  }
+}

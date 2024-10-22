@@ -1,0 +1,33 @@
+.app-link
+  text-decoration: none
+  font-weight: 500
+  color: var(--text-secondary-color)
+  font-family: "RF Dewi"
+  font-weight: 600
+  position: relative
+  display: inline-block
+  cursor: pointer
+
+  &::after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    bottom: -1px
+    height: 1px
+    background-color: var(--text-color)
+    opacity: 0
+
+  &:hover
+    color: var(--text-color)
+
+    &::after
+      opacity: 1
+
+  &.active
+    color: var(--text-color)
+
+.flex-link
+  display: flex
+  align-items: center
+  gap: 4px
