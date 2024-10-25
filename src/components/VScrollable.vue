@@ -147,6 +147,7 @@ export type VScrollableRef = {
   display: flex
   align-items: center
   justify-content: center
+  padding: 0
 
   &.disabled
     opacity: 0.5

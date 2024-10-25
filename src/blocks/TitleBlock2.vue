@@ -2,8 +2,7 @@
   <DecorationContainer class="title-block-2" :blinds="props.blinds">
     <div class="content">
       <h2 class="title" :class="cn({ align: props.align })">
-        <img v-if="props.icon" :src="icons[props.icon]" :alt="props.icon" class="icon"/>
-        {{ props.title }}
+        <img v-if="props.icon" :src="icons[props.icon]" :alt="props.icon" class="icon"/>{{ props.title }}
       </h2>
       <div v-if="props.text" class="text">
         {{ props.text }}

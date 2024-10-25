@@ -56,7 +56,7 @@ const props = defineBlock({
 
   .title
     font-size: 26px
-    font-weight: 600
+    font-weight: 500
     font-family: "RF Dewi"
     letter-spacing: -0.06em
 
@@ -74,8 +74,7 @@ const props = defineBlock({
   font-size: 15px
   letter-spacing: -0.04em
   display: flex
-  align-items: center
+  align-items: flex-start
   gap: 6px
-  height: 20px
 
 </style>

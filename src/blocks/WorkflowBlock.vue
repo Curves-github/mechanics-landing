@@ -22,6 +22,8 @@ defineBlock({
       margin-top: -56px
       margin-bottom: -6px
       max-width: 90vw
+      position: relative
+      z-index: 2
   .decoration-container__solid-frame
     display: none
 </style>

@@ -66,7 +66,8 @@ const props = defineBlock({
 
   &:first-child
     border-left: none
-
+  @media (max-width: 870px)
+    border: none
 .qa-block__title-block
   display: flex
   flex-direction: column
@@ -124,6 +125,7 @@ const props = defineBlock({
   border: none
   padding: 0 32px
   transition: background-color 0.2s
+  gap: 10px
   svg
     margin-left: auto
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)

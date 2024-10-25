@@ -38,6 +38,7 @@ const props = defineProps<{ markers?: boolean, solid?: boolean, blinds?: boolean
 
 .decoration-container
   display: flex
+  scroll-margin-top: 80px
 
 .decoration-container__side-border
   flex: 1 1 50px

@@ -61,6 +61,8 @@ const props = defineBlock({
       font-size: 32px
       letter-spacing: -0.06em
       margin: 20px
+  @media(max-width: 870px)
+      border: none
 
 .features-block-2__item
   padding: 32px
@@ -77,7 +79,7 @@ const props = defineBlock({
 
   .title
     font-size: 26px
-    font-weight: 600
+    font-weight: 500
     font-family: "RF Dewi"
     letter-spacing: -0.06em
     white-space: pre-wrap

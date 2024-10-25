@@ -37,6 +37,7 @@ const settings = useSettings()
   margin: 12px
   box-sizing: border-box
   gap: 40px
+  border-radius: 4px
 
   @media(max-width: 1260px)
     flex-direction: column

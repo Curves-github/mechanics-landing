@@ -51,7 +51,7 @@ const placeMarker = () => {
   }
 
   setTimeout(() => {
-    tabsRef.value!.scrollTo(child.offsetLeft-60, child.offsetLeft + child.clientWidth+60)
+    tabsRef.value!.scrollTo(child.offsetLeft, child.offsetLeft + child.clientWidth+60)
   }, 0)
 }
 
