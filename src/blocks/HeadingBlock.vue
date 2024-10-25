@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="heading-block__column heading-block__video-column">
-      <video src="../assets/headingVideo.webm" muted autoplay loop playsinline></video>
+      <video src="../assets/headingVideo.mp4" muted autoplay loop playsinline></video>
     </div>
   </DecorationContainer>
 </template>
