@@ -22,7 +22,8 @@ const emit = defineEmits([ "update:modelValue" ])
 
 const model = useVModel(props, "modelValue", emit, { passive: true })
 
-const onClick = (_e: MouseEvent) => {
+const onClick = (e: MouseEvent) => {
+  if ((e.target as HTMLElement).tagName === "A") return
   model.value = !model.value
 }
 

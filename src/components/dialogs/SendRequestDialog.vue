@@ -16,7 +16,8 @@
       </VButton>
       <VCheckbox v-bind="register('agreement')">
         <template #label>
-          Нажимая кнопку “Отправить” Вы соглашаетесь<br/>с условиями <a>Обработки персональных данных.</a>
+          Нажимая кнопку “Отправить” Вы соглашаетесь<br/>с условиями 
+          <a href="https://m.curvesdigital.ru/privacy-policy" target="_blank">Обработки персональных данных.</a>
         </template>
       </VCheckbox>
     </form>
