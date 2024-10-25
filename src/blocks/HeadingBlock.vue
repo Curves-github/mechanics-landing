@@ -73,6 +73,7 @@ const openForm = () => {
 
   @media(max-width: 870px)
     align-items: center
+    border: none
 
 .heading-block__content
   margin: auto 0

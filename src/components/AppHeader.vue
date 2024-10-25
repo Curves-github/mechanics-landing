@@ -2,7 +2,8 @@
   <div class="header__blob full-width">
     <header class="header">
       <RouterLink class="header__main-logo" to="/">
-        <img src="../assets/main-logo.png" alt="Механика" width="141" />
+        <img src="../assets/main-logo.webp" alt="Механика" width="35" />
+        <img src="../assets//main-logo-text.svg" alt="Механика" srcset="">
       </RouterLink>
       <div class="header__links">
         <a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{ item.title }}</a>
@@ -22,7 +23,7 @@ import { useDialogStore } from '../stores/dialogStore';
 import SendRequestDialog from './dialogs/SendRequestDialog.vue';
 import BurgerButton from './BurgerButton.vue';
 import MobileMenu from './MobileMenu.vue';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const settings = useSettings()
 
@@ -32,7 +33,13 @@ const openForm = () => {
 }
 
 const menuOpen = ref(false)
-
+watch(menuOpen, ()=>{
+  if(menuOpen.value){
+    document.body.classList.add('menu-opened')
+    return
+  }
+  document.body.classList.remove('menu-opened')
+})
 </script>
 
 <style lang="sass">
@@ -66,7 +73,8 @@ const menuOpen = ref(false)
       display: block
 
 .header__main-logo
-  display: block
+  display: flex
+  gap: 10px
   img
     display: block
 

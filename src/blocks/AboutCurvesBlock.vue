@@ -69,7 +69,7 @@ const props = defineBlock({
   .title
     max-width: 60%
     font-size: 36px
-    font-weight: 600
+    font-weight: 500
     font-family: "RF Dewi"
     letter-spacing: -0.06em
     white-space: pre-wrap
