@@ -1,7 +1,6 @@
 <template>
-  <DecorationContainer class="spacing-block" :class="cn({ size: props.size })">
-
-  </DecorationContainer>
+	<DecorationContainer class="spacing-block" :class="cn({ size: props.size })">
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -9,12 +8,11 @@ import DecorationContainer from '../components/DecorationContainer.vue';
 import { cn } from '../utils/propsToClass';
 
 const props = defineBlock({
-  id: "spacingBlock",
-  props: {
-    size: { type: "string", enum: [ "small", "default" ], default: "default" }
-  }
-})
-
+	id: 'spacingBlock',
+	props: {
+		size: { type: 'string', enum: ['small', 'default'], default: 'default' },
+	},
+});
 </script>
 
 <style lang="sass">

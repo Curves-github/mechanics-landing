@@ -1,45 +1,47 @@
 <template>
-  <div class="header__blob full-width">
-    <header class="header">
-      <RouterLink class="header__main-logo" to="/">
-        <img src="../assets/main-logo.webp" alt="Механика" width="35" />
-        <img src="../assets//main-logo-text.svg" alt="Механика" srcset="">
-      </RouterLink>
-      <div class="header__links">
-        <a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{ item.title }}</a>
-      </div>
-      <VButton class="header__action-button" @click="openForm">Запросить демо</VButton>
-      <BurgerButton :open="menuOpen" @click="menuOpen = !menuOpen"/>
-    </header>
-    <MobileMenu v-model:open="menuOpen"/>
-  </div>
+	<div class="header__blob full-width">
+		<header class="header">
+			<RouterLink class="header__main-logo" to="/">
+				<img src="../assets/main-logo.webp" alt="Механика" width="35" />
+				<img src="../assets//main-logo-text.svg" alt="Механика" srcset="" />
+			</RouterLink>
+			<div class="header__links">
+				<a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{
+					item.title
+				}}</a>
+			</div>
+			<VButton class="header__action-button" @click="openForm">Запросить демо</VButton>
+			<BurgerButton :open="menuOpen" @click="menuOpen = !menuOpen" />
+		</header>
+		<MobileMenu v-model:open="menuOpen" />
+	</div>
 </template>
 
 <script lang="ts" setup>
 import { RouterLink } from '@curves_digital/builder';
-import { useSettings } from '../pageSettings';
-import VButton from './VButton.vue';
-import { useDialogStore } from '../stores/dialogStore';
-import SendRequestDialog from './dialogs/SendRequestDialog.vue';
-import BurgerButton from './BurgerButton.vue';
-import MobileMenu from './MobileMenu.vue';
 import { ref, watch } from 'vue';
+import { useSettings } from '../pageSettings';
+import { useDialogStore } from '../stores/dialogStore';
+import BurgerButton from './BurgerButton.vue';
+import SendRequestDialog from './dialogs/SendRequestDialog.vue';
+import MobileMenu from './MobileMenu.vue';
+import VButton from './VButton.vue';
 
-const settings = useSettings()
+const settings = useSettings();
 
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
+	dialogStore.open(SendRequestDialog);
+};
 
-const menuOpen = ref(false)
-watch(menuOpen, ()=>{
-  if(menuOpen.value){
-    document.body.classList.add('menu-opened')
-    return
-  }
-  document.body.classList.remove('menu-opened')
-})
+const menuOpen = ref(false);
+watch(menuOpen, () => {
+	if (menuOpen.value) {
+		document.body.classList.add('menu-opened');
+		return;
+	}
+	document.body.classList.remove('menu-opened');
+});
 </script>
 
 <style lang="sass">
@@ -97,7 +99,7 @@ watch(menuOpen, ()=>{
 
   @media(max-width: 870px)
     display: none
-  
+
 .header__action-button
   margin-left: auto
   font-size: 14px
@@ -106,5 +108,4 @@ watch(menuOpen, ()=>{
 
   @media(max-width: 870px)
     display: none
-
 </style>

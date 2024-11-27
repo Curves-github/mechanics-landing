@@ -1,15 +1,17 @@
 <template>
-  <Transition>
-    <div v-if="props.open" class="app-mobile-menu__overlay">
-      <div class="app-mobile-menu" @click="mobileMenuClick">
-        <a class="app-mobile-menu__link" v-for="item in settings.page.header?.links" :href="item.to">
-          {{ item.title }}
-        </a>
-        <VButton class="cta-button" @click="openForm">Запросить демо</VButton>
-      </div>
-    </div>
-  </Transition>
-
+	<Transition>
+		<div v-if="props.open" class="app-mobile-menu__overlay">
+			<div class="app-mobile-menu" @click="mobileMenuClick">
+				<a
+					class="app-mobile-menu__link"
+					v-for="item in settings.page.header?.links"
+					:href="item.to">
+					{{ item.title }}
+				</a>
+				<VButton class="cta-button" @click="openForm">Запросить демо</VButton>
+			</div>
+		</div>
+	</Transition>
 </template>
 
 <script lang="ts" setup>
@@ -18,23 +20,21 @@ import { useDialogStore } from '../stores/dialogStore';
 import SendRequestDialog from './dialogs/SendRequestDialog.vue';
 import VButton from './VButton.vue';
 
-const props = defineProps<{ open?: boolean }>()
-const emit = defineEmits([ "update:open" ])
+const props = defineProps<{ open?: boolean }>();
+const emit = defineEmits(['update:open']);
 
-const settings = useSettings()
+const settings = useSettings();
 
 const mobileMenuClick = (e: MouseEvent) => {
-  if ((e.target as HTMLElement).tagName === "BUTTON" || (e.target as HTMLElement).tagName === "A") {
-    emit("update:open", false)
-  }
-}
+	if ((e.target as HTMLElement).tagName === 'BUTTON' || (e.target as HTMLElement).tagName === 'A') {
+		emit('update:open', false);
+	}
+};
 
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
 <style lang="sass">
@@ -70,16 +70,15 @@ const openForm = () => {
   color: var(--text-color)
   letter-spacing: -0.04em
   border-bottom: 1px solid var(--frame-color)
-  
+
 .app-mobile-menu__overlay
-  &.v-enter-active, &.v-leave-active 
+  &.v-enter-active, &.v-leave-active
     transition: background-color 0.225s
     .app-mobile-menu
       transition: transform 0.225s cubic-bezier(0.4, 0, 0.2, 1)
 
-  &.v-enter-from, &.v-leave-to 
+  &.v-enter-from, &.v-leave-to
     background-color: transparent
     .app-mobile-menu
       transform: translate(100%, 0)
-
 </style>

@@ -1,80 +1,76 @@
 <template>
-  <div class="v-collapse">
-    <slot name="activator" :open="open" :props="{ onClick }">
-      <div 
-        class="v-collapse__activator" 
-        :class="{ open }"
-        @mousedown="onClick" 
-        @mouseenter="onMouseEnter"
-      >
-        
-        <div>{{ props.label }}</div>
-      </div>
-    </slot>
-    <div 
-      class="v-collapse__content" 
-      :class="{ 'v-transition': transition }" 
-      :style="transition? { height: `${height}px` }: undefined"
-    >
-      <div v-show="transition || open" ref="innerRef" class="v-collapse__content-inner">
-        <slot></slot>
-      </div>
-    </div>
-  </div>
+	<div class="v-collapse">
+		<slot name="activator" :open="open" :props="{ onClick }">
+			<div
+				class="v-collapse__activator"
+				:class="{ open }"
+				@mousedown="onClick"
+				@mouseenter="onMouseEnter">
+				<div>{{ props.label }}</div>
+			</div>
+		</slot>
+		<div
+			class="v-collapse__content"
+			:class="{ 'v-transition': transition }"
+			:style="transition ? { height: `${height}px` } : undefined">
+			<div v-show="transition || open" ref="innerRef" class="v-collapse__content-inner">
+				<slot></slot>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import { useEventListener } from '@vueuse/core';
 import { nextTick, ref } from 'vue';
 
-const props = defineProps<{ label?: string }>()
+const props = defineProps<{ label?: string }>();
 
-const height = ref(0)
+const height = ref(0);
 
-const open = ref(false)
-const transition = ref(false)
-const innerRef = ref<HTMLElement>()
+const open = ref(false);
+const transition = ref(false);
+const innerRef = ref<HTMLElement>();
 
-let hideTimeout: ReturnType<typeof setTimeout> | null = null
+let hideTimeout: ReturnType<typeof setTimeout> | null = null;
 const onClick = async () => {
-  open.value = !open.value
-  
-  if (hideTimeout !== null) {
-    clearTimeout(hideTimeout)
-    hideTimeout = null
-  }
+	open.value = !open.value;
 
-  if (open.value === false && innerRef.value) {
-    height.value = innerRef.value!.clientHeight
-  }
-  
-  transition.value = true
-  await nextTick()
-  await new Promise(res => requestAnimationFrame(res))
+	if (hideTimeout !== null) {
+		clearTimeout(hideTimeout);
+		hideTimeout = null;
+	}
 
-  if (open.value) {
-    height.value = innerRef.value!.clientHeight
-  } else {
-    height.value = 0
-  }
-  
-  hideTimeout = setTimeout(() => {
-    transition.value = false
-  }, 200)
+	if (open.value === false && innerRef.value) {
+		height.value = innerRef.value!.clientHeight;
+	}
 
-  setTimeout(() => mouseMove = true, 0)
-}
+	transition.value = true;
+	await nextTick();
+	await new Promise((res) => requestAnimationFrame(res));
 
-let mouseMove = false
-useEventListener("mousedown", () => mouseMove = false)
+	if (open.value) {
+		height.value = innerRef.value!.clientHeight;
+	} else {
+		height.value = 0;
+	}
+
+	hideTimeout = setTimeout(() => {
+		transition.value = false;
+	}, 200);
+
+	setTimeout(() => (mouseMove = true), 0);
+};
+
+let mouseMove = false;
+useEventListener('mousedown', () => (mouseMove = false));
 
 const onMouseEnter = (e: MouseEvent) => {
-  if (e.buttons > 0 && !mouseMove && !document.body.classList.contains('mousedrag')) {
-    mouseMove = true
-    onClick()
-  }
-}
-
+	if (e.buttons > 0 && !mouseMove && !document.body.classList.contains('mousedrag')) {
+		mouseMove = true;
+		onClick();
+	}
+};
 </script>
 
 <style lang="sass">
@@ -103,5 +99,4 @@ const onMouseEnter = (e: MouseEvent) => {
 
   &.v-transition
     transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1)
-
 </style>

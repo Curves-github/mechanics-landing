@@ -1,81 +1,86 @@
 <template>
-  <DecorationContainer class="features-tabs-block" solid>
-    <div class="features-tabs__tabs-wrapper">
-      <div ref="tabsRef" class="features-tabs-block__tabs">
-        <VTabs v-model="currentTab" :items="props.tabs">
-          <template #item="{ item }">
-            <component v-if="item.icon" :is="featuresIcons[item.icon]"/>  {{ item.name }}
-          </template>
-        </VTabs>
-      </div>
-    </div>
-    <div class="features-tabs__column">
-      <div class="title heading">{{ currentSlide.title }}</div>
-      <div class="text">{{ currentSlide.text }}</div>
-      <VButton @click="openForm">Запросить демо</VButton>
-    </div>
-    <div class="features-tabs__column image-column" :class="cn({ align: currentSlide.imageAlignment })">
-      <Image v-if="currentSlide.image" :key="currentTab" :image="currentSlide.image" alt="Image Preview" />
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="features-tabs-block" solid>
+		<div class="features-tabs__tabs-wrapper">
+			<div ref="tabsRef" class="features-tabs-block__tabs">
+				<VTabs v-model="currentTab" :items="props.tabs">
+					<template #item="{ item }">
+						<component v-if="item.icon" :is="featuresIcons[item.icon]" /> {{ item.name }}
+					</template>
+				</VTabs>
+			</div>
+		</div>
+		<div class="features-tabs__column">
+			<div class="title heading">{{ currentSlide.title }}</div>
+			<div class="text">{{ currentSlide.text }}</div>
+			<VButton @click="openForm">Запросить демо</VButton>
+		</div>
+		<div
+			class="features-tabs__column image-column"
+			:class="cn({ align: currentSlide.imageAlignment })">
+			<Image
+				v-if="currentSlide.image"
+				:key="currentTab"
+				:image="currentSlide.image"
+				alt="Image Preview" />
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
+import { cn, Image } from '@curves_digital/builder';
+import { useResizeObserver } from '@vueuse/core';
 import { computed, CSSProperties, ref, watch } from 'vue';
 import DecorationContainer from '../components/DecorationContainer.vue';
-import { featuresIcons } from '../utils/icons';
-import { useResizeObserver } from '@vueuse/core';
-import VButton from '../components/VButton.vue';
-import { useDialogStore } from '../stores/dialogStore';
 import SendRequestDialog from '../components/dialogs/SendRequestDialog.vue';
-import { cn, Image } from '@curves_digital/builder';
+import VButton from '../components/VButton.vue';
 import VTabs from '../components/VTabs.vue';
+import { useDialogStore } from '../stores/dialogStore';
+import { featuresIcons } from '../utils/icons';
 
 const props = defineBlock({
-  id: "featuresTabs",
-  group: "Features",
-  props: {
-    tabs: {
-      type: "array",
-      items: {
-        icon: { type: "string", enum: Object.keys(featuresIcons) },
-        name: { type: "string" },
-        title: { type: "string" },
-        text: { type: "string", multiline: true },
-        image: { type: "object", props: { previewSrc: "string", src: "string" }, format: "image" },
-        imageAlignment: { type: "string?", enum: [ "left", "center" ], default: "center" }
-      }
-    }
-  }
-})
+	id: 'featuresTabs',
+	group: 'Features',
+	props: {
+		tabs: {
+			type: 'array',
+			items: {
+				icon: { type: 'string', enum: Object.keys(featuresIcons) },
+				name: { type: 'string' },
+				title: { type: 'string' },
+				text: { type: 'string', multiline: true },
+				image: { type: 'object', props: { previewSrc: 'string', src: 'string' }, format: 'image' },
+				imageAlignment: { type: 'string?', enum: ['left', 'center'], default: 'center' },
+			},
+		},
+	},
+});
 
-const currentTab = ref(0)
-const tabsRef = ref<HTMLDivElement>()
-const markerStyle = ref<CSSProperties>({ left: "0px", width: "100px", display: "none" })
+const currentTab = ref(0);
+const tabsRef = ref<HTMLDivElement>();
+const markerStyle = ref<CSSProperties>({ left: '0px', width: '100px', display: 'none' });
 
 const currentSlide = computed(() => {
-  return props.tabs[currentTab.value]
-})
+	return props.tabs[currentTab.value];
+});
 
 const updateMarkerStyle = () => {
-  const activeTab = tabsRef.value?.querySelector<HTMLElement>(".active")
-  if (!activeTab) return
-  markerStyle.value = { left: activeTab.offsetLeft+"px", width: activeTab.offsetWidth+"px" }
-}
+	const activeTab = tabsRef.value?.querySelector<HTMLElement>('.active');
+	if (!activeTab) return;
+	markerStyle.value = { left: activeTab.offsetLeft + 'px', width: activeTab.offsetWidth + 'px' };
+};
 
-watch(currentTab, updateMarkerStyle, { flush: "post" })
+watch(currentTab, updateMarkerStyle, { flush: 'post' });
 
-useResizeObserver(tabsRef, updateMarkerStyle)
+useResizeObserver(tabsRef, updateMarkerStyle);
 
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
 <style lang="sass">
-.features-tabs-block 
+.features-tabs-block
   height: 500px
 
   @media(max-width: 870px)
@@ -95,7 +100,7 @@ const openForm = () => {
   flex-direction: column
   gap: 20px
   box-sizing: border-box
-  
+
   @media(max-width: 870px)
     padding: 20px
 
@@ -149,8 +154,7 @@ const openForm = () => {
   z-index: 5
   display: flex
   justify-content: center
-  
+
   .features-tabs-block__tabs
     max-width: 100%
-
 </style>

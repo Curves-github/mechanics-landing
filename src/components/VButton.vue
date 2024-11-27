@@ -1,19 +1,20 @@
 <template>
-  <component :is="component ?? 'button'" class="v-button" :class="{ disabled, flat, outline, large }">
-    <slot></slot>
-  </component>
+	<component
+		:is="component ?? 'button'"
+		class="v-button"
+		:class="{ disabled, flat, outline, large }">
+		<slot></slot>
+	</component>
 </template>
 
 <script lang="ts" setup>
-
-defineProps<{ 
-  component?: string,
-  disabled?: boolean, 
-  flat?: boolean, 
-  outline?: boolean, 
-  large?: boolean
-}>()
-
+defineProps<{
+	component?: string;
+	disabled?: boolean;
+	flat?: boolean;
+	outline?: boolean;
+	large?: boolean;
+}>();
 </script>
 
 <style lang="sass">
@@ -40,8 +41,8 @@ defineProps<{
 
   &:hover
     background-color: var(--button-hover-color)
-    
-  &:active 
+
+  &:active
     background-color: var(--button-pressed-color)
 
   &.disabled
@@ -50,12 +51,11 @@ defineProps<{
 
   &:focus-visible
     box-shadow: 0 0 0 4px #0D6EFD40
-  
+
   &.color-red.outline
     border-color: var(--error-color)
     color: var(--error-color)
 
 a.v-button
   text-decoration: none
-
 </style>

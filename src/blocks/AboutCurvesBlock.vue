@@ -1,17 +1,17 @@
 <template>
-  <DecorationContainer class="about-curves-block" solid>
-    <div class="about-curves-block__content">
-      <CurvesLabel/>
-      <div class="title">
-        {{ props.text }}
-      </div>
-      <VButton component="a" :href="props.buttonHref" target="_blank">
-        {{ props.buttonText }}<ArrowIcon/>
-      </VButton>
-      <img src="../assets/curves-frame.svg" alt="Curves-Frame" class="curves-frame"/>
-      <img src="../assets/tripleten-preview.png" alt="Tripleten" class="tripleten-preview"/>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="about-curves-block" solid>
+		<div class="about-curves-block__content">
+			<CurvesLabel />
+			<div class="title">
+				{{ props.text }}
+			</div>
+			<VButton component="a" :href="props.buttonHref" target="_blank">
+				{{ props.buttonText }}<ArrowIcon />
+			</VButton>
+			<img src="../assets/curves-frame.svg" alt="Curves-Frame" class="curves-frame" />
+			<img src="../assets/tripleten-preview.png" alt="Tripleten" class="tripleten-preview" />
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -20,16 +20,19 @@ import DecorationContainer from '../components/DecorationContainer.vue';
 import ArrowIcon from '../components/icons/ArrowIcon.vue';
 import VButton from '../components/VButton.vue';
 
-
 const props = defineBlock({
-  id: "aboutCurves",
-  props: {
-    text: { type: "string", multiline: true, default: "Мы разрабатываем и собираем лендинги на разных конструкторах сайтов много лет подряд" },
-    buttonText: { type: "string", default: "Посмотреть кейсы" },
-    buttonHref: { type: "string", default: "https://curvesdigital.ru/" }
-  }
-})
-
+	id: 'aboutCurves',
+	props: {
+		text: {
+			type: 'string',
+			multiline: true,
+			default:
+				'Мы разрабатываем и собираем лендинги на разных конструкторах сайтов много лет подряд',
+		},
+		buttonText: { type: 'string', default: 'Посмотреть кейсы' },
+		buttonHref: { type: 'string', default: 'https://curvesdigital.ru/' },
+	},
+});
 </script>
 
 <style lang="sass">
@@ -125,6 +128,4 @@ const props = defineBlock({
     @media(max-width: 870px)
       margin-top: 24px
       align-self: center
-
-
 </style>

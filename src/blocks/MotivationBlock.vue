@@ -1,11 +1,11 @@
 <template>
-  <DecorationContainer class="motivation-block" solid>
-    <div class="content">
-      <div class="title heading">
-        <component :is="parsedContent" />
-      </div>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="motivation-block" solid>
+		<div class="content">
+			<div class="title heading">
+				<component :is="parsedContent" />
+			</div>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -14,22 +14,22 @@ import DecorationContainer from '../components/DecorationContainer.vue';
 import { parseText } from '../utils/parser';
 
 const props = defineBlock({
-  id: "motivationBlock",
-  props: {
-    text: { type: "string", multiline: true }
-  }
-})
+	id: 'motivationBlock',
+	props: {
+		text: { type: 'string', multiline: true },
+	},
+});
 
-const parsedContent = () => parseText(props.text, {
-  format: {
-    "**": (str) => h("span", {}, str)
-  }
-})
-
+const parsedContent = () =>
+	parseText(props.text, {
+		format: {
+			'**': (str) => h('span', {}, str),
+		},
+	});
 </script>
 
 <style lang="sass">
-.motivation-block 
+.motivation-block
   height: 468px
   @media(max-width: 1250px)
     height: 38vw
@@ -70,5 +70,4 @@ const parsedContent = () => parseText(props.text, {
     @media(max-width: 720px)
       font-size: 24px
       letter-spacing: -0.06em
-
 </style>

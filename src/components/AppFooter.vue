@@ -1,20 +1,22 @@
 <template>
-  <footer class="app-footer">
-    <RouterLink to="/">
-      <img src="../assets/footer-logo.svg" alt="Mechanics" />
-    </RouterLink>
-    <div class="app-footer__links">
-      <a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{ item.title }}</a>
-      <a class="app-link flex-link" target="_blank" href="https://curvesdigital.ru">
-        О Кёрвс
-        <ExternalLinkIcon/>
-      </a>
-    </div>
-    <div class="policy-info">
-      <RouterLink class="app-link" to="/privacy-policy">Политика конфиденциальности</RouterLink>
-      <a class="app-link" href="#">Условия и положения</a>
-    </div>
-  </footer>
+	<footer class="app-footer">
+		<RouterLink to="/">
+			<img src="../assets/footer-logo.svg" alt="Mechanics" />
+		</RouterLink>
+		<div class="app-footer__links">
+			<a class="app-link" v-for="item in settings.page.header?.links" :href="item.to">{{
+				item.title
+			}}</a>
+			<a class="app-link flex-link" target="_blank" href="https://curvesdigital.ru">
+				О Кёрвс
+				<ExternalLinkIcon />
+			</a>
+		</div>
+		<div class="policy-info">
+			<RouterLink class="app-link" to="/privacy-policy">Политика конфиденциальности</RouterLink>
+			<a class="app-link" href="#">Условия и положения</a>
+		</div>
+	</footer>
 </template>
 
 <script lang="ts" setup>
@@ -22,9 +24,7 @@ import { RouterLink } from '@curves_digital/builder';
 import { useSettings } from '../pageSettings';
 import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 
-
-const settings = useSettings()
-
+const settings = useSettings();
 </script>
 
 <style lang="sass">
@@ -61,5 +61,4 @@ const settings = useSettings()
 
   @media(max-width: 1260px)
     margin: 0
-
 </style>

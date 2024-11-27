@@ -1,33 +1,36 @@
 {
-  "name": "mechanics-landing",
-  "version": "1.0.0",
-  "author": "curves",
-  "license": "MIT",
-  "type": "module",
-  "private": "true",
-  "scripts": {
-    "dev": "vite",
-    "build": "curves build",
-    "push": "curves push"
-  },
-  "overrides": {
-    "vue": "^3.5.5"
-  },
-  "devDependencies": {
-    "@curves_digital/builder": "^1.1.11",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "sass": "1.76.0",
-    "typescript": "^5.4.5",
-    "vite": "^5.4.5",
-    "vue-tsc": "^2.0.14"
-  },
-  "dependencies": {
-    "@vueuse/core": "^10.9.0",
-    "color2k": "^2.0.3",
-    "pinia": "^2.2.2",
-    "popmotion": "^11.0.5",
-    "vue": "^3.5.5",
-    "vuesix": "^1.0.30",
-    "vuewrite": "^0.0.18"
-  }
+	"name": "mechanics-landing",
+	"version": "1.0.0",
+	"author": "curves",
+	"license": "MIT",
+	"type": "module",
+	"private": "true",
+	"scripts": {
+		"dev": "vite",
+		"build": "curves build",
+		"push": "curves push",
+		"format": "prettier . --write"
+	},
+	"overrides": {
+		"vue": "^3.5.5"
+	},
+	"devDependencies": {
+		"@curves_digital/builder": "^1.1.11",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"sass": "1.76.0",
+		"typescript": "^5.4.5",
+		"vite": "^5.4.5",
+		"vue-tsc": "^2.0.14",
+		"prettier": "3.4.1",
+		"prettier-plugin-organize-imports": "^4.1.0"
+	},
+	"dependencies": {
+		"@vueuse/core": "^10.9.0",
+		"color2k": "^2.0.3",
+		"pinia": "^2.2.2",
+		"popmotion": "^11.0.5",
+		"vue": "^3.5.5",
+		"vuesix": "^1.0.30",
+		"vuewrite": "^0.0.18"
+	}
 }

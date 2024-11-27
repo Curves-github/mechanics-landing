@@ -1,10 +1,13 @@
 <template>
-  <DecorationContainer class="request-demo-block">
-    <img src="../assets/decoration-final.png" alt="Decoration" height="102"/>
-    <div class="heading">Оставь запрос на полное демо</div>
-    <div class="text">Конструктор создан разработчиками, которые понимают<br/>специфику создания маркентинговых сайтов</div>
-    <VButton @click="openForm">Запросить демо</VButton>
-  </DecorationContainer>
+	<DecorationContainer class="request-demo-block">
+		<img src="../assets/decoration-final.png" alt="Decoration" height="102" />
+		<div class="heading">Оставь запрос на полное демо</div>
+		<div class="text">
+			Конструктор создан разработчиками, которые понимают<br />специфику создания маркентинговых
+			сайтов
+		</div>
+		<VButton @click="openForm">Запросить демо</VButton>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -13,19 +16,15 @@ import SendRequestDialog from '../components/dialogs/SendRequestDialog.vue';
 import VButton from '../components/VButton.vue';
 import { useDialogStore } from '../stores/dialogStore';
 
-
 defineBlock({
-  id: "requestDemoBlock",
-  props: {
+	id: 'requestDemoBlock',
+	props: {},
+});
 
-  }
-})
-
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
 <style lang="sass">
@@ -61,5 +60,4 @@ const openForm = () => {
     @media(max-width: 870px)
       font-size: 16px
       letter-spacing: -0.04em
-
 </style>

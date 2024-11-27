@@ -1,43 +1,43 @@
 <template>
-  <DecorationContainer class="title-block-2" :blinds="props.blinds">
-    <div class="content">
-      <h2 class="title" :class="cn({ align: props.align })">
-        <img v-if="props.icon" :src="icons[props.icon]" :alt="props.icon" class="icon"/>{{ props.title }}
-      </h2>
-      <div v-if="props.text" class="text">
-        {{ props.text }}
-      </div>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="title-block-2" :blinds="props.blinds">
+		<div class="content">
+			<h2 class="title" :class="cn({ align: props.align })">
+				<img v-if="props.icon" :src="icons[props.icon]" :alt="props.icon" class="icon" />{{
+					props.title
+				}}
+			</h2>
+			<div v-if="props.text" class="text">
+				{{ props.text }}
+			</div>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
 import DecorationContainer from '../components/DecorationContainer.vue';
 
 const props = defineBlock({
-  id: "titleBlock2",
-  name: "Заголовок секции",
-  props: {
-    icon: { type: "string??", enum: Object.keys(icons) },
-    title: { type: "string", multiline: true },
-    text: { type: "string", multiline: true },
-    align: { type: "string", enum: [ "left", "center", "right" ], default: "left" },
-    blinds: { type: "boolean", default: false, title: "Вертикальные линии" }
-  }
-})
-
+	id: 'titleBlock2',
+	name: 'Заголовок секции',
+	props: {
+		icon: { type: 'string??', enum: Object.keys(icons) },
+		title: { type: 'string', multiline: true },
+		text: { type: 'string', multiline: true },
+		align: { type: 'string', enum: ['left', 'center', 'right'], default: 'left' },
+		blinds: { type: 'boolean', default: false, title: 'Вертикальные линии' },
+	},
+});
 </script>
 
 <script lang="ts">
-import objectIcon from '../assets/3d-object.svg'
-import rotateIcon from '../assets/rotate.svg'
+import objectIcon from '../assets/3d-object.svg';
+import rotateIcon from '../assets/rotate.svg';
 import { cn } from '../utils/propsToClass';
 
 const icons: Record<string, string> = {
-  "object": objectIcon,
-  "rotate": rotateIcon,
-}
-
+	object: objectIcon,
+	rotate: rotateIcon,
+};
 </script>
 
 <style lang="sass">

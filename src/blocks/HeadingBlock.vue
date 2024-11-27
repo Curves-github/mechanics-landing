@@ -1,41 +1,38 @@
 <template>
-  <DecorationContainer class="heading-block" markers>
-    <div class="heading-block__column">
-      <CurvesLabel />
-      <div class="heading-block__content">
-        <h1>{{ props.heading }}</h1>
-        <div class="subheading">{{ props.subheading }}</div>
-        <VButton @click="openForm">Запросить демо</VButton>
-      </div>
-    </div>
-    <div class="heading-block__column heading-block__video-column">
-      <video src="../assets/headingVideo.mp4" muted autoplay loop playsinline></video>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="heading-block" markers>
+		<div class="heading-block__column">
+			<CurvesLabel />
+			<div class="heading-block__content">
+				<h1>{{ props.heading }}</h1>
+				<div class="subheading">{{ props.subheading }}</div>
+				<VButton @click="openForm">Запросить демо</VButton>
+			</div>
+		</div>
+		<div class="heading-block__column heading-block__video-column">
+			<video src="../assets/headingVideo.mp4" muted autoplay loop playsinline></video>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
 import CurvesLabel from '../components/CurvesLabel.vue';
-import DecorationContainer from '../components/DecorationContainer.vue'
+import DecorationContainer from '../components/DecorationContainer.vue';
 import SendRequestDialog from '../components/dialogs/SendRequestDialog.vue';
 import VButton from '../components/VButton.vue';
 import { useDialogStore } from '../stores/dialogStore';
 
 const props = defineBlock({
-  id: "headingBlock",
-  props: {
-    heading: { type: "string", multiline: true },
-    subheading: { type: "string", multiline: true },
+	id: 'headingBlock',
+	props: {
+		heading: { type: 'string', multiline: true },
+		subheading: { type: 'string', multiline: true },
+	},
+});
 
-  }
-})
-
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
 <style lang="sass">
@@ -81,7 +78,7 @@ const openForm = () => {
 
   @media(max-width: 1250px)
     padding-bottom: 0
-  
+
   h1
     white-space: pre-wrap
     font-size: 50px
@@ -120,5 +117,4 @@ const openForm = () => {
       max-width: 450px
       max-height: 450px
       margin: auto
-
 </style>

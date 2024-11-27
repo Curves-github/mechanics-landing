@@ -1,37 +1,35 @@
 <template>
-  <div class="decoration-container" :class="{ solid: props.solid }">
-    <div class="decoration-container__side-border"></div>
-    <div class="decoration-container__inner" :class="{ solid: props.solid }">
-      <slot></slot>
-      <template v-if="props.markers">
-        <div class="decoration-container__marker top-left"></div>
-        <div class="decoration-container__marker top-right"></div>
-        <div class="decoration-container__marker bottom-left"></div>
-        <div class="decoration-container__marker bottom-right"></div>
-      </template>
-      <template v-else>
-        <div class="decoration-container__marker-alt top-left"></div>
-        <div class="decoration-container__marker-alt top-right"></div>
-        <div class="decoration-container__marker-alt bottom-left"></div>
-        <div class="decoration-container__marker-alt bottom-right"></div>
-      </template>
-      <div v-if="props.solid" class="decoration-container__solid-frame"></div>
-      <div v-if="props.blinds" class="decoration-container__blinds">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="decoration-container__side-border"></div>
-  </div>
+	<div class="decoration-container" :class="{ solid: props.solid }">
+		<div class="decoration-container__side-border"></div>
+		<div class="decoration-container__inner" :class="{ solid: props.solid }">
+			<slot></slot>
+			<template v-if="props.markers">
+				<div class="decoration-container__marker top-left"></div>
+				<div class="decoration-container__marker top-right"></div>
+				<div class="decoration-container__marker bottom-left"></div>
+				<div class="decoration-container__marker bottom-right"></div>
+			</template>
+			<template v-else>
+				<div class="decoration-container__marker-alt top-left"></div>
+				<div class="decoration-container__marker-alt top-right"></div>
+				<div class="decoration-container__marker-alt bottom-left"></div>
+				<div class="decoration-container__marker-alt bottom-right"></div>
+			</template>
+			<div v-if="props.solid" class="decoration-container__solid-frame"></div>
+			<div v-if="props.blinds" class="decoration-container__blinds">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div class="decoration-container__side-border"></div>
+	</div>
 </template>
 
 <script lang="ts" setup>
-
-const props = defineProps<{ markers?: boolean, solid?: boolean, blinds?: boolean }>()
-
+const props = defineProps<{ markers?: boolean; solid?: boolean; blinds?: boolean }>();
 </script>
 
 <style lang="sass">
@@ -106,7 +104,7 @@ const props = defineProps<{ markers?: boolean, solid?: boolean, blinds?: boolean
   left: 15px
   border: 1px solid var(--frame-color)
   width: 10px
-  height: 10px 
+  height: 10px
   box-sizing: border-box
 
 .decoration-container__solid-frame
@@ -128,5 +126,4 @@ const props = defineProps<{ markers?: boolean, solid?: boolean, blinds?: boolean
   z-index: -1
   div
     border-right: 1px solid var(--frame-color)
-
 </style>

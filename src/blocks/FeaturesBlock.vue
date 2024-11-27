@@ -1,18 +1,23 @@
 <template>
-  <DecorationContainer class="features-block" solid>
-    <div v-for="featureGroup in props.features" class="features-block__item">
-      <img v-if="featureGroup.icon" :src="icons[featureGroup.icon]" :alt="featureGroup.icon" height="56" class="icon"/>
-      <div class="title">
-        {{ featureGroup.title }}
-      </div>
-      <div class="features-block__subitem-list">
-        <div v-for="item in featureGroup.subitems" class="features-block__subitem">
-          <img src="../assets/check.svg" alt="Check" width="20"/>
-          {{ item }}
-        </div>
-      </div>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="features-block" solid>
+		<div v-for="featureGroup in props.features" class="features-block__item">
+			<img
+				v-if="featureGroup.icon"
+				:src="icons[featureGroup.icon]"
+				:alt="featureGroup.icon"
+				height="56"
+				class="icon" />
+			<div class="title">
+				{{ featureGroup.title }}
+			</div>
+			<div class="features-block__subitem-list">
+				<div v-for="item in featureGroup.subitems" class="features-block__subitem">
+					<img src="../assets/check.svg" alt="Check" width="20" />
+					{{ item }}
+				</div>
+			</div>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -20,20 +25,19 @@ import DecorationContainer from '../components/DecorationContainer.vue';
 import { icons } from '../utils/icons';
 
 const props = defineBlock({
-  id: "featuresBlock",
-  group: "Features",
-  props: {
-    features: {
-      type: "array",
-      items: {
-        icon: { type: "string?", enum: Object.keys(icons) },
-        title: { type: "string" },
-        subitems: { type: "array", items: "string" }
-      }
-    }
-  }
-})
-
+	id: 'featuresBlock',
+	group: 'Features',
+	props: {
+		features: {
+			type: 'array',
+			items: {
+				icon: { type: 'string?', enum: Object.keys(icons) },
+				title: { type: 'string' },
+				subitems: { type: 'array', items: 'string' },
+			},
+		},
+	},
+});
 </script>
 
 <style lang="sass">
@@ -76,5 +80,4 @@ const props = defineBlock({
   display: flex
   align-items: flex-start
   gap: 6px
-
 </style>

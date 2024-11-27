@@ -1,14 +1,15 @@
 <template>
-  <DecorationContainer solid class="show-code-block">
-    <div class="content">
-      <div class="heading">
-        Этот сайт тоже [собран] <br/>на Механике
-      </div>
-      <VButton component="a" target="_blank" href="https://github.com/Curves-github/mechanics-landing">
-        <CodeIcon/> Посмотреть код
-      </VButton>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer solid class="show-code-block">
+		<div class="content">
+			<div class="heading">Этот сайт тоже [собран] <br />на Механике</div>
+			<VButton
+				component="a"
+				target="_blank"
+				href="https://github.com/Curves-github/mechanics-landing">
+				<CodeIcon /> Посмотреть код
+			</VButton>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -17,13 +18,12 @@ import CodeIcon from '../components/icons/CodeIcon.vue';
 import VButton from '../components/VButton.vue';
 
 defineBlock({
-  id: "showCodeBlock"
-})
-
+	id: 'showCodeBlock',
+});
 </script>
 
 <style lang="sass">
-.show-code-block 
+.show-code-block
   .decoration-container__inner
     height: 280px
 
@@ -45,5 +45,4 @@ defineBlock({
 
   .heading
     font-size: 36px
-
 </style>

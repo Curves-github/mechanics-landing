@@ -1,43 +1,49 @@
 <template>
-  <DecorationContainer class="features-block-3" solid>
-    <div class="content">
-      <div v-for="item in props.features" class="features-block-3__item">
-        <div class="title">
-          <img v-if="item.icon" :src="icons[item.icon]" width="24" :alt="item.icon"/>
-          {{ item.title }}
-        </div>
-        <div class="text">{{ item.text }}</div>
-      </div>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="features-block-3" solid>
+		<div class="content">
+			<div v-for="item in props.features" class="features-block-3__item">
+				<div class="title">
+					<img v-if="item.icon" :src="icons[item.icon]" width="24" :alt="item.icon" />
+					{{ item.title }}
+				</div>
+				<div class="text">{{ item.text }}</div>
+			</div>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
 import DecorationContainer from '../components/DecorationContainer.vue';
 
 const props = defineBlock({
-  id: "featuresBlock3",
-  group: "Features",
-  props: {
-    features: {
-      type: "array",
-      items: {
-        icon: { type: "string?", enum: Object.keys(icons) },
-        title: { type: "string" },
-        text: { type: "string", multiline: true }
-      }
-    }
-  }
-})
-
+	id: 'featuresBlock3',
+	group: 'Features',
+	props: {
+		features: {
+			type: 'array',
+			items: {
+				icon: { type: 'string?', enum: Object.keys(icons) },
+				title: { type: 'string' },
+				text: { type: 'string', multiline: true },
+			},
+		},
+	},
+});
 </script>
 
 <script lang="ts">
+const _icons = import.meta.glob('../assets/features-2/*.svg', {
+	eager: true,
+	import: 'default',
+	exhaustive: true,
+});
 
-const _icons = import.meta.glob("../assets/features-2/*.svg", { eager: true, import: 'default', exhaustive: true })
-
-const icons = Object.fromEntries(Object.entries(_icons).map(([ key, value ]) => [ key.slice(key.lastIndexOf("/")+1, -4), value as string ]))
-
+const icons = Object.fromEntries(
+	Object.entries(_icons).map(([key, value]) => [
+		key.slice(key.lastIndexOf('/') + 1, -4),
+		value as string,
+	]),
+);
 </script>
 
 <style lang="sass">
@@ -79,8 +85,7 @@ const icons = Object.fromEntries(Object.entries(_icons).map(([ key, value ]) => 
       margin-bottom: -2px
 
   @media(max-width: 870px)
-    padding: 24px 16px 
+    padding: 24px 16px
     height: auto
     padding-top: 60px
-
 </style>

@@ -1,16 +1,16 @@
 <template>
-  <DecorationContainer class="features-block-2" markers>
-    <div class="features-block-2__column">
-      <h2>{{ props.title }}</h2>
-    </div>
-    <div class="features-block-2__column">
-      <div v-for="item in props.features" class="features-block-2__item">
-        <img v-if="item.icon" :src="icons[item.icon]" :alt="item.icon" height="56" class="icon"/>
-        <div class="title">{{ item.title }}</div>
-        <div class="text">{{ item.text }}</div>
-      </div>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="features-block-2" markers>
+		<div class="features-block-2__column">
+			<h2>{{ props.title }}</h2>
+		</div>
+		<div class="features-block-2__column">
+			<div v-for="item in props.features" class="features-block-2__item">
+				<img v-if="item.icon" :src="icons[item.icon]" :alt="item.icon" height="56" class="icon" />
+				<div class="title">{{ item.title }}</div>
+				<div class="text">{{ item.text }}</div>
+			</div>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -18,21 +18,20 @@ import DecorationContainer from '../components/DecorationContainer.vue';
 import { icons } from '../utils/icons';
 
 const props = defineBlock({
-  id: "featuresBlock2",
-  group: "Features",
-  props: {
-    title: { type: "string", multiline: true },
-    features: {
-      type: "array",
-      items: {
-        icon: { type: "string", enum: Object.keys(icons) },
-        title: { type: "string", multiline: true },
-        text: { type: "string", multiline: true }
-      }
-    }
-  }
-})
-
+	id: 'featuresBlock2',
+	group: 'Features',
+	props: {
+		title: { type: 'string', multiline: true },
+		features: {
+			type: 'array',
+			items: {
+				icon: { type: 'string', enum: Object.keys(icons) },
+				title: { type: 'string', multiline: true },
+				text: { type: 'string', multiline: true },
+			},
+		},
+	},
+});
 </script>
 
 <style lang="sass">
@@ -90,5 +89,4 @@ const props = defineBlock({
     font-size: 16px
     letter-spacing: -0.04em
     line-height: 1.1em
-
 </style>

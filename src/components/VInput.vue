@@ -1,8 +1,13 @@
 <template>
-  <div class="v-input">
-    <textarea ref="inputRef" v-if="props.multiline" v-model="model" :placeholder="placeholder" :name="name"/>
-    <input ref="inputRef" v-else v-model="model" :placeholder="placeholder" :name="name"/>
-  </div>
+	<div class="v-input">
+		<textarea
+			ref="inputRef"
+			v-if="props.multiline"
+			v-model="model"
+			:placeholder="placeholder"
+			:name="name" />
+		<input ref="inputRef" v-else v-model="model" :placeholder="placeholder" :name="name" />
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -10,31 +15,30 @@ import { useTextareaAutosize, useVModel } from '@vueuse/core';
 import { Ref, ref } from 'vue';
 
 const props = defineProps<{
-  modelValue?: string,
-  placeholder?: string,
-  multiline?: boolean,
-  name?: string,
-  required?: boolean
-}>()
-const emit = defineEmits([ "update:modelValue" ])
-const model = useVModel(props, "modelValue", emit, { passive: true, defaultValue: "" })
+	modelValue?: string;
+	placeholder?: string;
+	multiline?: boolean;
+	name?: string;
+	required?: boolean;
+}>();
+const emit = defineEmits(['update:modelValue']);
+const model = useVModel(props, 'modelValue', emit, { passive: true, defaultValue: '' });
 
-const inputRef = ref<HTMLInputElement | HTMLTextAreaElement>()
+const inputRef = ref<HTMLInputElement | HTMLTextAreaElement>();
 
 if (props.multiline) {
-  useTextareaAutosize({
-    element: inputRef as Ref<HTMLTextAreaElement>,
-    input: model
-  })
+	useTextareaAutosize({
+		element: inputRef as Ref<HTMLTextAreaElement>,
+		input: model,
+	});
 }
-
 </script>
 
 <style lang="sass">
 .v-input
   border: 1px solid var(--frame-color)
   border-radius: 8px
-  
+
   input, textarea
     min-width: 50px
     width: 100%
@@ -56,5 +60,4 @@ if (props.multiline) {
     line-height: 1.4em
     min-height: 110px
     max-height: 160px
-
 </style>

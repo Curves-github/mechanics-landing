@@ -1,14 +1,14 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vitePlugin from '@curves_digital/builder/plugin'
+import vitePlugin from '@curves_digital/builder/plugin';
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vitePlugin() ],
-  server: {
-    // open: true
-  },
-  build: {
-    minify: false
-  }
-})
+	plugins: [vue(), vitePlugin()],
+	server: {
+		// open: true
+	},
+	build: {
+		minify: false,
+	},
+});

@@ -1,7 +1,7 @@
 <template>
-  <DecorationContainer class="action-button-block">
-    <VButton @click="openForm">Запросить демо</VButton>
-  </DecorationContainer>
+	<DecorationContainer class="action-button-block">
+		<VButton @click="openForm">Запросить демо</VButton>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
@@ -11,15 +11,14 @@ import VButton from '../components/VButton.vue';
 import { useDialogStore } from '../stores/dialogStore';
 
 defineBlock({
-  id: "actionButtonBlock",
-  props: {}
-})
+	id: 'actionButtonBlock',
+	props: {},
+});
 
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
 <style lang="sass">
@@ -31,5 +30,4 @@ const openForm = () => {
     display: flex
     flex-direction: column
     align-items: center
-
 </style>
