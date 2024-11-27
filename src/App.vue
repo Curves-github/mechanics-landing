@@ -15,5 +15,3 @@ import AppHeader from './components/AppHeader.vue';
 
 const props = defineProps<{ state?: any }>();
 </script>
-
-<style lang="sass"></style>

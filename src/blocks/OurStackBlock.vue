@@ -42,54 +42,69 @@ const logos: Record<string, string> = {
 };
 </script>
 
-<style lang="sass">
-.our-stack-block
-  .decoration-container__inner
-    height: 220px
+<style lang="css">
+.our-stack-block .decoration-container__inner {
+	height: 220px;
+}
 
-    @media(max-width: 870px)
-      height: auto
+@media (width <= 870px) {
+	.our-stack-block .decoration-container__inner {
+		height: auto;
+	}
+}
 
-  .block-title
-    font-size: 32px
-    flex: 1 1 50px
-    padding: 32px
-    box-sizing: border-box
+.our-stack-block .block-title {
+	box-sizing: border-box;
+	flex: 1 1 50px;
+	padding: 32px;
+	font-size: 32px;
+}
 
-  .content
-    display: flex
-    height: 100%
+.our-stack-block .content {
+	display: flex;
+	height: 100%;
+}
 
-    @media(max-width: 870px)
-      flex-direction: column
+@media (width <= 870px) {
+	.our-stack-block .content {
+		flex-direction: column;
+	}
+}
 
-.out-stack-block__items
-  flex: 2.25 50px
-  display: flex
+.out-stack-block__items {
+	display: flex;
+	flex: 2.25 50px;
+}
 
-  .block
-    flex: 1 1 50px
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    border-left: 1px solid var(--frame-color)
-    box-sizing: border-box
-    color: var(--text-tertiary-color)
-    letter-spacing: -0.04em
-    height: 220px
+.out-stack-block__items .block {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 50px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 220px;
+	color: var(--text-tertiary-color);
+	letter-spacing: -0.04em;
+	border-left: 1px solid var(--frame-color);
+}
 
-    img
-      margin-top: 32px
-      margin-bottom: 50px
+.out-stack-block__items .block img {
+	margin-top: 32px;
+	margin-bottom: 50px;
+}
 
-    @media(max-width: 870px)
-      border-top: 1px solid var(--frame-color)
-      height: 25vw
-      min-height: 120px
+@media (width <= 870px) {
+	.out-stack-block__items .block {
+		height: 25vw;
+		min-height: 120px;
+		border-top: 1px solid var(--frame-color);
+	}
 
-      img
-        max-height: 50px
-        margin-top: 0
-        margin-bottom: 20px
+	.out-stack-block__items .block img {
+		max-height: 50px;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+}
 </style>

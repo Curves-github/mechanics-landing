@@ -27,37 +27,47 @@ const openForm = () => {
 };
 </script>
 
-<style lang="sass">
-.request-demo-block
-  height: 630px
-  background-image: url(../assets/final-background.png)
-  background-size: cover
-  background-position: center
+<style lang="css">
+.request-demo-block {
+	height: 630px;
+	background-image: url('../assets/final-background.png');
+	background-position: center;
+	background-size: cover;
+}
 
-  .decoration-container__inner
-    border: none
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    gap: 32px
-    text-align: center
+.request-demo-block .decoration-container__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: none;
+}
 
-  .heading
-    font-size: 50px
-    letter-spacing: -0.06em
+.request-demo-block .heading {
+	font-size: 50px;
+	letter-spacing: -0.06em;
+}
 
-    @media(max-width: 870px)
-      font-size: 32px
-      letter-spacing: -0.06em
+@media (width <= 870px) {
+	.request-demo-block .heading {
+		font-size: 32px;
+		letter-spacing: -0.06em;
+	}
+}
 
-  .text
-    font-weight: 500
-    font-size: 18px
-    letter-spacing: -0.04em
-    margin-top: -16px
+.request-demo-block .text {
+	margin-top: -16px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: -0.04em;
+}
 
-    @media(max-width: 870px)
-      font-size: 16px
-      letter-spacing: -0.04em
+@media (width <= 870px) {
+	.request-demo-block .text {
+		font-size: 16px;
+		letter-spacing: -0.04em;
+	}
+}
 </style>

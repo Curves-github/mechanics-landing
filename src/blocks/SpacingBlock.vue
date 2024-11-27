@@ -15,13 +15,16 @@ const props = defineBlock({
 });
 </script>
 
-<style lang="sass">
-.spacing-block
-  height: 100px
+<style lang="css">
+.spacing-block {
+	height: 100px;
+}
 
-  &.size-small
-    height: 64px
+.spacing-block.size-small {
+	height: 64px;
+}
 
-  &.size-large
-    height: 128px
+.spacing-block.size-large {
+	height: 128px;
+}
 </style>

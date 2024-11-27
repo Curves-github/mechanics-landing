@@ -27,38 +27,52 @@ import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 const settings = useSettings();
 </script>
 
-<style lang="sass">
-.app-footer
-  height: 80px
-  background-color: white
-  display: flex
-  align-items: center
-  padding: 0 16px
-  margin: 12px
-  box-sizing: border-box
-  gap: 40px
-  border-radius: 4px
+<style lang="css">
+.app-footer {
+	box-sizing: border-box;
+	display: flex;
+	gap: 40px;
+	align-items: center;
+	height: 80px;
+	padding: 0 16px;
+	margin: 12px;
+	background-color: white;
+	border-radius: 4px;
+}
 
-  @media(max-width: 1260px)
-    flex-direction: column
-    align-items: flex-start
-    height: auto
-    padding: 16px
+@media (width <= 1260px) {
+	.app-footer {
+		flex-direction: column;
+		align-items: flex-start;
+		height: auto;
+		padding: 16px;
+	}
+}
 
-.app-footer__links
-  display: flex
-  gap: 32px
-  a
-    color: var(--text-color)
+.app-footer__links {
+	display: flex;
+	gap: 32px;
+}
 
-  @media(max-width: 1260px)
-    flex-wrap: wrap
+.app-footer__links a {
+	color: var(--text-color);
+}
 
-.policy-info
-  margin-left: auto
-  display: flex
-  gap: 20px
+@media (width <= 1260px) {
+	.app-footer__links {
+		flex-wrap: wrap;
+	}
+}
 
-  @media(max-width: 1260px)
-    margin: 0
+.policy-info {
+	display: flex;
+	gap: 20px;
+	margin-left: auto;
+}
+
+@media (width <= 1260px) {
+	.policy-info {
+		margin: 0;
+	}
+}
 </style>

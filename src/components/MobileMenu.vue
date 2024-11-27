@@ -37,48 +37,61 @@ const openForm = () => {
 };
 </script>
 
-<style lang="sass">
-.app-mobile-menu__overlay
-  position: fixed
-  top: 0
-  bottom: 0
-  width: 100vw
-  z-index: 99
-  background-color: rgba(0, 0, 0, 0.5)
+<style lang="css">
+.app-mobile-menu__overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 99;
+	width: 100vw;
+	background-color: rgb(0 0 0 / 50%);
+}
 
-.app-mobile-menu
-  width: 100%
-  min-height: 100%
-  background-color: var(--background-color)
-  display: flex
-  flex-direction: column
-  padding: 0 12px
-  padding-top: 80px
-  padding-bottom: 40px
-  box-sizing: border-box
+.app-mobile-menu {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	padding: 0 12px;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	background-color: var(--background-color);
+}
 
-  .cta-button
-    margin-top: auto
+.app-mobile-menu .cta-button {
+	margin-top: auto;
+}
 
-.app-mobile-menu__link
-  height: 70px
-  display: flex
-  align-items: center
-  font-weight: 600
-  font-size: 18px
-  text-decoration: none
-  color: var(--text-color)
-  letter-spacing: -0.04em
-  border-bottom: 1px solid var(--frame-color)
+.app-mobile-menu__link {
+	display: flex;
+	align-items: center;
+	height: 70px;
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--text-color);
+	text-decoration: none;
+	letter-spacing: -0.04em;
+	border-bottom: 1px solid var(--frame-color);
+}
 
-.app-mobile-menu__overlay
-  &.v-enter-active, &.v-leave-active
-    transition: background-color 0.225s
-    .app-mobile-menu
-      transition: transform 0.225s cubic-bezier(0.4, 0, 0.2, 1)
+.app-mobile-menu__overlay.v-enter-active,
+.app-mobile-menu__overlay.v-leave-active {
+	transition: background-color 0.225s;
+}
 
-  &.v-enter-from, &.v-leave-to
-    background-color: transparent
-    .app-mobile-menu
-      transform: translate(100%, 0)
+.app-mobile-menu__overlay.v-enter-active .app-mobile-menu,
+.app-mobile-menu__overlay.v-leave-active .app-mobile-menu {
+	transition: transform 0.225s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-mobile-menu__overlay.v-enter-from,
+.app-mobile-menu__overlay.v-leave-to {
+	background-color: transparent;
+}
+
+.app-mobile-menu__overlay.v-enter-from .app-mobile-menu,
+.app-mobile-menu__overlay.v-leave-to .app-mobile-menu {
+	transform: translate(100%, 0);
+}
 </style>

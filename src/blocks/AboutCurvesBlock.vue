@@ -35,97 +35,131 @@ const props = defineBlock({
 });
 </script>
 
-<style lang="sass">
-.about-curves-block
-  .decoration-container__inner
-    border: none
-    color: white
-    height: 390px
+<style lang="css">
+.about-curves-block .decoration-container__inner {
+	height: 390px;
+	color: white;
+	border: none;
+}
 
-    @media(max-width: 870px)
-      height: auto
+@media (width <= 870px) {
+	.about-curves-block .decoration-container__inner {
+		height: auto;
+	}
+}
 
-  .decoration-container__solid-frame
-    border: none
-    background-color: #171717
-    top: 0
+.about-curves-block .decoration-container__solid-frame {
+	top: 0;
+	background-color: #171717;
+	border: none;
+}
 
-.about-curves-block__content
-  display: flex
-  position: relative
-  z-index: 3
-  height: 100%
-  flex-direction: column
-  padding: 32px
-  gap: 12px
-  box-sizing: border-box
+.about-curves-block__content {
+	position: relative;
+	z-index: 3;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	height: 100%;
+	padding: 32px;
+}
 
-  @media(max-width: 870px)
-    padding-top: 400px
-    text-align: center
+@media (width <= 870px) {
+	.about-curves-block__content {
+		padding-top: 400px;
+		text-align: center;
+	}
+}
 
-  .curves-label
-    opacity: 0.6
-    @media(max-width: 870px)
-      justify-content: center
+.about-curves-block__content .curves-label {
+	opacity: 0.6;
+}
 
-  .title
-    max-width: 60%
-    font-size: 36px
-    font-weight: 500
-    font-family: "RF Dewi"
-    letter-spacing: -0.06em
-    white-space: pre-wrap
+@media (width <= 870px) {
+	.about-curves-block__content .curves-label {
+		justify-content: center;
+	}
+}
 
-    @media(max-width: 870px)
-      max-width: 100%
+.about-curves-block__content .title {
+	max-width: 60%;
+	font-family: 'RF Dewi', sans-serif;
+	font-size: 36px;
+	font-weight: 500;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
 
-  .curves-frame
-    position: absolute
-    right: 0
-    top: 0
+@media (width <= 870px) {
+	.about-curves-block__content .title {
+		max-width: 100%;
+	}
+}
 
-    @media(max-width: 870px)
-      left: 0
-      right: auto
+.about-curves-block__content .curves-frame {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 
-  .tripleten-preview
-    position: absolute
-    height: 240px
-    right: 35px
-    top: 75px
+@media (width <= 870px) {
+	.about-curves-block__content .curves-frame {
+		right: auto;
+		left: 0;
+	}
+}
 
-  @media(max-width: 870px)
-    .curves-frame
-      left: calc(50vw - 264px)
-      right: auto
-    .tripleten-preview
-      left: calc(50vw - 230px)
-      right: auto
+.about-curves-block__content .tripleten-preview {
+	position: absolute;
+	top: 75px;
+	right: 35px;
+	height: 240px;
+}
 
-  @media(max-width: 560px)
-    .curves-frame
-      top: 0
-      left: 0
-      width: 100%
-      object-fit: contain
+@media (width <= 870px) {
+	.about-curves-block__content .curves-frame {
+		right: auto;
+		left: calc(50vw - 264px);
+	}
 
-    .tripleten-preview
-      top: calc(40vw - 135px)
-      left: 7%
-      width: 84%
-      object-fit: contain
+	.about-curves-block__content .tripleten-preview {
+		right: auto;
+		left: calc(50vw - 230px);
+	}
+}
 
-  .v-button
-    align-self: flex-start
-    background-color: white
-    margin-top: auto
-    color: var(--text-color)
+@media (width <= 560px) {
+	.about-curves-block__content .curves-frame {
+		top: 0;
+		left: 0;
+		width: 100%;
+		object-fit: contain;
+	}
 
-    svg
-      margin-right: -6px
+	.about-curves-block__content .tripleten-preview {
+		top: calc(40vw - 135px);
+		left: 7%;
+		width: 84%;
+		object-fit: contain;
+	}
+}
 
-    @media(max-width: 870px)
-      margin-top: 24px
-      align-self: center
+.about-curves-block__content .v-button {
+	align-self: flex-start;
+	margin-top: auto;
+	color: var(--text-color);
+	background-color: white;
+}
+
+.about-curves-block__content .v-button svg {
+	margin-right: -6px;
+}
+
+@media (width <= 870px) {
+	.about-curves-block__content .v-button {
+		align-self: center;
+		margin-top: 24px;
+	}
+}
 </style>

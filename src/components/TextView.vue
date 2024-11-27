@@ -51,58 +51,69 @@ const decorator = (style: Style) => {
 };
 </script>
 
-<style lang="sass">
-.text-view
-  outline: none
-  position: relative
-  white-space: pre-wrap
-  overflow-y: hidden
-  font-size: 15px
+<style lang="css">
+.text-view {
+	position: relative;
+	overflow-y: hidden;
+	font-size: 15px;
+	white-space: pre-wrap;
+	outline: none;
+}
 
-  h1
-    font-size: 32px
-    letter-spacing: -0.06em
+.text-view h1 {
+	font-size: 32px;
+	letter-spacing: -0.06em;
+}
 
-  h2
-    font-size: 24px
-    letter-spacing: -0.06em
-    margin: 48px 0px
-    margin-bottom: 16px
+.text-view h2 {
+	margin: 48px 0;
+	margin-bottom: 16px;
+	font-size: 24px;
+	letter-spacing: -0.06em;
+}
 
-  &>p
-    margin: 12px 0
-    line-height: 1.5em
+.text-view > p {
+	margin: 12px 0;
+	line-height: 1.5em;
+}
 
-  &>li
-    margin: 12px 0
-    line-height: 1.5em
+.text-view > li {
+	margin: 12px 0;
+	line-height: 1.5em;
+}
 
-  .callout
-    background-color: var(--callout-background-color)
-    border: 1px solid var(--primary-color)
-    border-radius: 8px
-    padding: 20px
-    color: var(--primary-color)
-    line-height: 1.5em
+.text-view .callout {
+	padding: 20px;
+	line-height: 1.5em;
+	color: var(--primary-color);
+	background-color: var(--callout-background-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 8px;
+}
 
-  .bold
-    font-weight: 700
+.text-view .bold {
+	font-weight: 700;
+}
 
-  .italic
-    font-style: italic
+.text-view .italic {
+	font-style: italic;
+}
 
-  .underline
-    text-decoration: underline
+.text-view .underline {
+	text-decoration: underline;
+}
 
-  .code
-    background-color: var(--blocks-color)
-    padding: 2px 4px
-    border-radius: 4px
-    color: var(--primary-color)
+.text-view .code {
+	padding: 2px 4px;
+	color: var(--primary-color);
+	background-color: var(--blocks-color);
+	border-radius: 4px;
+}
 
-  a
-    color: var(--primary-color)
-    font-weight: 500
-    text-decoration: underline
-    text-underline-offset: 2px
+.text-view a {
+	font-weight: 500;
+	color: var(--primary-color);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
 </style>

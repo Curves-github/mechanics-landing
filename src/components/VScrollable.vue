@@ -128,53 +128,68 @@ export type VScrollableRef = {
 };
 </script>
 
-<style lang="sass">
-.v-scrollable
-  display: flex
-  align-items: stretch
-  overflow: hidden
-  padding: 0 32px
-  position: relative
-  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+<style lang="css">
+.v-scrollable {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	padding: 0 32px;
+	overflow: hidden;
+	transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  &.hideArrows
-    position: relative
-    padding: 0 8px
-    .v-scrollable__left-button, .v-scrollable__right-button
-      display: none
+.v-scrollable.hideArrows {
+	position: relative;
+	padding: 0 8px;
+}
 
-.v-scrollable__left-button, .v-scrollable__right-button
-  align-self: center
-  width: 32px
-  height: 32px
-  position: relative
-  z-index: 10
-  position: absolute
-  background: none
-  border: none
-  display: flex
-  align-items: center
-  justify-content: center
-  padding: 0
+.v-scrollable__right-button,
+.v-scrollable__left-button {
+	position: relative;
+	position: absolute;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	background: none;
+	border: none;
+}
 
-  &.disabled
-    opacity: 0.5
+.v-scrollable__left-button {
+	left: 0;
+}
 
-.v-scrollable__left-button
-  left: 0
+.v-scrollable__right-button {
+	right: 0;
+}
 
-.v-scrollable__right-button
-  right: 0
+.v-scrollable.hideArrows .v-scrollable__left-button,
+.v-scrollable.hideArrows .v-scrollable__right-button {
+	display: none;
+}
 
-.v-scrollable__wrapper
-  overflow: hidden
-  position: relative
-  width: 100%
+.v-scrollable__left-button.disabled,
+.v-scrollable__right-button.disabled {
+	opacity: 0.5;
+}
 
-.v-scrollable__content
-  position: absolute
-  left: 0
-  width: max-content
-  &.transition
-    transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1)
+.v-scrollable__wrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.v-scrollable__content {
+	position: absolute;
+	left: 0;
+	width: max-content;
+}
+
+.v-scrollable__content.transition {
+	transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
 </style>

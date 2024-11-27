@@ -21,13 +21,15 @@ const openForm = () => {
 };
 </script>
 
-<style lang="sass">
-.action-button-block
-  height: 160px
+<style lang="css">
+.action-button-block {
+	height: 160px;
+}
 
-  .decoration-container__inner
-    padding-top: 40px
-    display: flex
-    flex-direction: column
-    align-items: center
+.action-button-block .decoration-container__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+}
 </style>

@@ -59,26 +59,36 @@ watch(
 );
 </script>
 
-<style lang="sass">
-.v-dialog-backdrop
-  position: fixed
-  top: 0
-  bottom: 0
-  width: 100vw
-  background-color: rgba(0, 0, 0, 0.75)
-  display: flex
-  align-items: center
-  justify-content: center
-  z-index: 900
+<style lang="css">
+.v-dialog-backdrop {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 900;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	background-color: rgb(0 0 0 / 75%);
+}
 
-  &.v-enter-active, &.v-leave-active
-    transition: opacity 0.22s ease
-    .v-dialog
-      transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1)
+.v-dialog-backdrop.v-enter-active,
+.v-dialog-backdrop.v-leave-active {
+	transition: opacity 0.22s ease;
+}
 
-  &.v-enter-from, &.v-leave-to
-    opacity: 0
+.v-dialog-backdrop.v-enter-active .v-dialog,
+.v-dialog-backdrop.v-leave-active .v-dialog {
+	transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
 
-    .v-dialog
-      transform: scale(0.8)
+.v-dialog-backdrop.v-enter-from,
+.v-dialog-backdrop.v-leave-to {
+	opacity: 0;
+}
+
+.v-dialog-backdrop.v-enter-from .v-dialog,
+.v-dialog-backdrop.v-leave-to .v-dialog {
+	transform: scale(0.8);
+}
 </style>

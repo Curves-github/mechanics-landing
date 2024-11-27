@@ -6,7 +6,7 @@ import { articlesPlugin } from './collections/articles';
 import { docsPlugin } from './collections/docs';
 import { requestsPlugin } from './collections/requests';
 import { settingsPlugin } from './pageSettings';
-import './styles/global.sass';
+import './styles/global.css';
 
 createSSRApp(App, { state: window.state })
 	.use(createPinia())

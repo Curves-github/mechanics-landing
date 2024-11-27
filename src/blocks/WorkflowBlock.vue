@@ -13,16 +13,17 @@ defineBlock({
 });
 </script>
 
-<style lang="sass">
-.workflow-block
-  .decoration-container__inner
-    img
-      margin-left: -4px
-      margin-top: -56px
-      margin-bottom: -6px
-      max-width: 90vw
-      position: relative
-      z-index: 2
-  .decoration-container__solid-frame
-    display: none
+<style lang="css">
+.workflow-block .decoration-container__inner img {
+	position: relative;
+	z-index: 2;
+	max-width: 90vw;
+	margin-top: -56px;
+	margin-bottom: -6px;
+	margin-left: -4px;
+}
+
+.workflow-block .decoration-container__solid-frame {
+	display: none;
+}
 </style>

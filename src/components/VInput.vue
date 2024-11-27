@@ -34,30 +34,36 @@ if (props.multiline) {
 }
 </script>
 
-<style lang="sass">
-.v-input
-  border: 1px solid var(--frame-color)
-  border-radius: 8px
+<style lang="css">
+.v-input {
+	border: 1px solid var(--frame-color);
+	border-radius: 8px;
+}
 
-  input, textarea
-    min-width: 50px
-    width: 100%
-    background: none
-    border: none
-    height: 44px
-    padding: 0 16px
-    box-sizing: border-box
-    outline: none
-    border-radius: 8px
+.v-input input,
+.v-input textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 50px;
+	height: 44px;
+	padding: 0 16px;
+	background: none;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+}
 
-    &::placeholder
-      color: #969696
+.v-input input::placeholder,
+.v-input textarea::placeholder {
+	color: #969696;
+}
 
-  textarea
-    resize: none
-    height: unset
-    padding: 12px 16px
-    line-height: 1.4em
-    min-height: 110px
-    max-height: 160px
+.v-input textarea {
+	height: unset;
+	min-height: 110px;
+	max-height: 160px;
+	padding: 12px 16px;
+	line-height: 1.4em;
+	resize: none;
+}
 </style>

@@ -15,14 +15,16 @@ defineBlock({
 });
 </script>
 
-<style lang="sass">
-.video-block
-  height: 560px
+<style lang="css">
+.video-block {
+	height: 560px;
+}
 
-  .content
-    background-color: white
-    height: 100%
-    display: flex
-    align-items: center
-    justify-content: center
+.video-block .content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	background-color: white;
+}
 </style>

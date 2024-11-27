@@ -21,15 +21,19 @@
 
 <script lang="ts" setup></script>
 
-<style lang="sass">
-.curves-label
-  display: flex
-  align-items: center
-  gap: 8px
-  font-weight: 500
-  font-size: 16px
-  letter-spacing: -0.04em
+<style lang="css">
+.curves-label {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: -0.04em;
+}
 
-  @media(max-width: 870px)
-    font-size: 14px
+@media (width <= 870px) {
+	.curves-label {
+		font-size: 14px;
+	}
+}
 </style>

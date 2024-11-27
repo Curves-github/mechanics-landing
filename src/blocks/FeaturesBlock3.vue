@@ -46,46 +46,55 @@ const icons = Object.fromEntries(
 );
 </script>
 
-<style lang="sass">
-.features-block-3
-  .content
-    height: 100%
-    position: relative
-    z-index: 3
-    display: flex
-    flex-wrap: wrap
+<style lang="css">
+.features-block-3 .content {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+}
 
-    @media(max-width: 870px)
-      flex-direction: column
+@media (width <= 870px) {
+	.features-block-3 .content {
+		flex-direction: column;
+	}
+}
 
-.features-block-3__item
-  flex: 1 1 30%
-  border-left: 1px solid var(--frame-color)
-  border-top: 1px solid var(--frame-color)
-  padding: 0 30px
-  height: 232px
-  display: flex
-  flex-direction: column
-  justify-content: center
-  box-sizing: border-box
-  font-size: 16px
-  letter-spacing: -0.04em
-  color: #666666
-  white-space: pre-wrap
+.features-block-3__item {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 30%;
+	flex-direction: column;
+	justify-content: center;
+	height: 232px;
+	padding: 0 30px;
+	font-size: 16px;
+	color: #666;
+	letter-spacing: -0.04em;
+	white-space: pre-wrap;
+	border-top: 1px solid var(--frame-color);
+	border-left: 1px solid var(--frame-color);
+}
 
-  .title
-    font-weight: 500
-    font-size: 17px
-    letter-spacing: -0.04em
-    color: var(--text-color)
-    margin-bottom: 12px
+.features-block-3__item .title {
+	margin-bottom: 12px;
+	font-size: 17px;
+	font-weight: 500;
+	color: var(--text-color);
+	letter-spacing: -0.04em;
+}
 
-    img
-      vertical-align: bottom
-      margin-bottom: -2px
+.features-block-3__item .title img {
+	margin-bottom: -2px;
+	vertical-align: bottom;
+}
 
-  @media(max-width: 870px)
-    padding: 24px 16px
-    height: auto
-    padding-top: 60px
+@media (width <= 870px) {
+	.features-block-3__item {
+		height: auto;
+		padding: 24px 16px;
+		padding-top: 60px;
+	}
+}
 </style>

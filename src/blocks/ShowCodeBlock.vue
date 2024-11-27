@@ -22,27 +22,31 @@ defineBlock({
 });
 </script>
 
-<style lang="sass">
-.show-code-block
-  .decoration-container__inner
-    height: 280px
+<style lang="css">
+.show-code-block .decoration-container__inner {
+	height: 280px;
+}
 
-  .decoration-container__solid-frame
-    background-color: white
+.show-code-block .decoration-container__solid-frame {
+	background-color: white;
+}
 
-  .content
-    position: relative
-    z-index: 3
-    padding: 32px
-    display: flex
-    flex-direction: column
-    height: 100%
-    box-sizing: border-box
+.show-code-block .content {
+	position: relative;
+	z-index: 3;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 32px;
+}
 
-    .v-button
-      margin-top: auto
-      align-self: flex-start
+.show-code-block .content .v-button {
+	align-self: flex-start;
+	margin-top: auto;
+}
 
-  .heading
-    font-size: 36px
+.show-code-block .heading {
+	font-size: 36px;
+}
 </style>

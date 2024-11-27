@@ -73,30 +73,35 @@ const onMouseEnter = (e: MouseEvent) => {
 };
 </script>
 
-<style lang="sass">
-.v-collapse
-  -webkit-user-drag: none
+<style lang="css">
+.v-collapse {
+	-webkit-user-drag: none;
+}
 
-.v-collapse__activator
-  cursor: pointer
-  user-select: none
-  display: flex
-  align-items: center
-  gap: 4px
-  height: 30px
-  font-size: 14px
+.v-collapse__activator {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	user-select: none;
+}
 
-  svg
-    margin-left: -4px
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+.v-collapse__activator svg {
+	margin-left: -4px;
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  &.open
-    svg
-      transform: rotate(90deg)
+.v-collapse__activator.open svg {
+	transform: rotate(90deg);
+}
 
-.v-collapse__content
-  overflow: hidden
+.v-collapse__content {
+	overflow: hidden;
+}
 
-  &.v-transition
-    transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+.v-collapse__content.v-transition {
+	transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 </style>

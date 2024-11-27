@@ -79,82 +79,106 @@ const openForm = () => {
 };
 </script>
 
-<style lang="sass">
-.features-tabs-block
-  height: 500px
+<style lang="css">
+.features-tabs-block {
+	height: 500px;
+}
 
-  @media(max-width: 870px)
-    height: auto
+@media (width <= 870px) {
+	.features-tabs-block {
+		height: auto;
+	}
+}
 
-  .decoration-container__inner
-    display: flex
+.features-tabs-block .decoration-container__inner {
+	display: flex;
+}
 
-    @media(max-width: 870px)
-      flex-direction: column-reverse
+@media (width <= 870px) {
+	.features-tabs-block .decoration-container__inner {
+		flex-direction: column-reverse;
+	}
+}
 
-.features-tabs__column
-  flex: 1 1 50%
-  border-left: 1px solid var(--frame-color)
-  padding: 32px
-  display: flex
-  flex-direction: column
-  gap: 20px
-  box-sizing: border-box
+.features-tabs__column {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 50%;
+	flex-direction: column;
+	gap: 20px;
+	padding: 32px;
+	border-left: 1px solid var(--frame-color);
+}
 
-  @media(max-width: 870px)
-    padding: 20px
+@media (width <= 870px) {
+	.features-tabs__column {
+		padding: 20px;
+	}
+}
 
-  &:first-child
-    border-left: none
+.features-tabs__column:first-child {
+	border-left: none;
+}
 
-  .title
-    font-size: 36px
-    white-space: pre-wrap
+.features-tabs__column .title {
+	font-size: 36px;
+	white-space: pre-wrap;
+}
 
-  .text
-    font-size: 16px
-    font-weight: 500
-    color: var(--text-secondary-color)
-    letter-spacing: -0.04em
-    white-space: pre-wrap
-    line-height: 1.4em
+.features-tabs__column .text {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.4em;
+	color: var(--text-secondary-color);
+	letter-spacing: -0.04em;
+	white-space: pre-wrap;
+}
 
-  .v-button
-    align-self: flex-start
+.features-tabs__column .v-button {
+	align-self: flex-start;
+}
 
-.features-tabs__column.image-column
-  background-position: center
-  background-image: url(../assets/grid-light.svg)
-  flex-direction: row
-  align-items: center
-  justify-content: center
-  padding: 0
+.features-tabs__column.image-column {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	background-image: url('../assets/grid-light.svg');
+	background-position: center;
+}
 
-  @media(max-width: 870px)
-    min-height: 80vw
+@media (width <= 870px) {
+	.features-tabs__column.image-column {
+		min-height: 80vw;
+	}
+}
 
-  img
-    width: 100%
-    height: calc(100% + 1px)
-    object-fit: cover
-    display: block
-    z-index: 5
-    box-sizing: border-box
-    border: 1px solid var(--frame-color)
-    border-left: none
+.features-tabs__column.image-column img {
+	z-index: 5;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: calc(100% + 1px);
+	object-fit: cover;
+	border: 1px solid var(--frame-color);
+	border-left: none;
+}
 
-  &.align-left
-    justify-content: flex-start
+.features-tabs__column.image-column.align-left {
+	justify-content: flex-start;
+}
 
-.features-tabs__tabs-wrapper
-  position: absolute
-  top: -90px
-  left: 0
-  right: 0
-  z-index: 5
-  display: flex
-  justify-content: center
+.features-tabs__tabs-wrapper {
+	position: absolute;
+	top: -90px;
+	right: 0;
+	left: 0;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+}
 
-  .features-tabs-block__tabs
-    max-width: 100%
+.features-tabs__tabs-wrapper .features-tabs-block__tabs {
+	max-width: 100%;
+}
 </style>

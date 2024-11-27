@@ -13,9 +13,10 @@ const props = defineBlock({
 });
 </script>
 
-<style lang="sass">
-.text-view-block
-  width: 1120px
-  margin: 0 auto
-  max-width: 90vw
+<style lang="css">
+.text-view-block {
+	width: 1120px;
+	max-width: 90vw;
+	margin: 0 auto;
+}
 </style>

@@ -102,13 +102,14 @@ const decorator = (style: Style) => {
 };
 </script>
 
-<style lang="sass">
-.code-editor
-  background-color: var(--blocks-color)
-  border-radius: 6px
-  font-size: 14px
-  padding: 20px
-  outline: none
-  font-family: ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace
-  line-height: 18px
+<style lang="css">
+.code-editor {
+	padding: 20px;
+	font-family: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	font-size: 14px;
+	line-height: 18px;
+	background-color: var(--blocks-color);
+	border-radius: 6px;
+	outline: none;
+}
 </style>

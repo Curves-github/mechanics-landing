@@ -78,53 +78,68 @@ watch(
 watch(model, placeMarker, { flush: 'post' });
 </script>
 
-<style lang="sass">
-.v-tabs
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-  overflow: hidden
-  white-space: nowrap
+<style lang="css">
+.v-tabs {
+	overflow: hidden;
+	white-space: nowrap;
+	border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
 
-  .v-scrollable__content
-    position: relative
-    gap: 20px
-    display: flex
+.v-tabs .v-scrollable__content {
+	position: relative;
+	display: flex;
+	gap: 20px;
+}
 
-.v-tabs__tab
-  height: 44px
-  font-size: 16px
-  background: none
-  border: none
-  display: flex
-  align-items: center
-  gap: 8px
-  cursor: pointer
-  color: var(--text-tertiary-color)
-  font-weight: 500
-  letter-spacing: -0.04em
-  transition: color 0.2s
-  padding: 0
+.v-tabs__tab {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	height: 44px;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-tertiary-color);
+	letter-spacing: -0.04em;
+	cursor: pointer;
+	background: none;
+	border: none;
+	transition: color 0.2s;
+}
 
-  &.v-enter-active, &.v-leave-active
-    transition: transform 0.225s cubic-bezier(0, 0, 0.2, 1), opacity 0.225s
+.v-tabs__tab.v-enter-active,
+.v-tabs__tab.v-leave-active {
+	transition:
+		transform 0.225s cubic-bezier(0, 0, 0.2, 1),
+		opacity 0.225s;
+}
 
-  &.v-enter-from, &.v-leave-to
-    transform: translateY(-20px)
-    opacity: 0
+.v-tabs__tab.v-enter-from,
+.v-tabs__tab.v-leave-to {
+	opacity: 0;
+	transform: translateY(-20px);
+}
 
-  &.v-leave-active
-    position: absolute
+.v-tabs__tab.v-leave-active {
+	position: absolute;
+}
 
-  &.active
-    color: var(--text-color)
+.v-tabs__tab.active {
+	color: var(--text-color);
+}
 
-  svg
-    flex-shrink: 0
+.v-tabs__tab svg {
+	flex-shrink: 0;
+}
 
-.v-tabs__marker
-  position: absolute
-  bottom: 0px
-  height: 1px
-  background-color: var(--text-color)
-  border-radius: 1px
-  transition: left 0.225s cubic-bezier(0.4, 0, 0.2, 1), width 0.225s cubic-bezier(0.4, 0, 0.2, 1)
+.v-tabs__marker {
+	position: absolute;
+	bottom: 0;
+	height: 1px;
+	background-color: var(--text-color);
+	border-radius: 1px;
+	transition:
+		left 0.225s cubic-bezier(0.4, 0, 0.2, 1),
+		width 0.225s cubic-bezier(0.4, 0, 0.2, 1);
+}
 </style>

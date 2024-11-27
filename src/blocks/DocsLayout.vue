@@ -58,67 +58,79 @@ const nextAndLastPages = computed(() => {
 });
 </script>
 
-<style lang="sass">
-.docs-layout
-  display: flex
-  min-height: calc(100vh - 174px)
+<style lang="css">
+.docs-layout {
+	display: flex;
+	min-height: calc(100vh - 174px);
+}
 
-.docs-layout__sidebar
-  width: calc(50vw - 480px)
-  background-color: var(--blocks-color)
-  display: flex
-  flex-direction: column
-  padding: 24px 0
-  padding-left: max(24px, calc(50vw - 700px))
-  box-sizing: border-box
-  gap: 16px
-  min-width: 240px
+.docs-layout__sidebar {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: calc(50vw - 480px);
+	min-width: 240px;
+	padding: 24px 0;
+	padding-left: max(24px, calc(50vw - 700px));
+	background-color: var(--blocks-color);
+}
 
-  a
-    width: fit-content
-    font-size: 15px
+.docs-layout__sidebar a {
+	width: fit-content;
+	font-size: 15px;
+}
 
-    &.active
-      color: var(--text-color)
+.docs-layout__sidebar a.active {
+	color: var(--text-color);
+}
 
-.docs-layout__content
-  width: 960px
-  padding: 0 80px
-  box-sizing: border-box
+.docs-layout__content {
+	box-sizing: border-box;
+	width: 960px;
+	padding: 0 80px;
+}
 
-.docs-layout__next-page-links
-  display: flex
-  border-top: 1px solid var(--frame-color)
-  margin: 0 80px
-  gap: 20px
-  padding-top: 24px
-  padding-bottom: 60px
+.docs-layout__next-page-links {
+	display: flex;
+	gap: 20px;
+	padding-top: 24px;
+	padding-bottom: 60px;
+	margin: 0 80px;
+	border-top: 1px solid var(--frame-color);
+}
 
-.docs-layout__next-page
-  display: flex
-  flex-direction: column
-  flex: 1 1 50px
-  text-decoration: none
-  border: 1px solid var(--frame-color)
-  border-radius: 8px
-  padding: 12px 20px
-  gap: 4px
+.docs-layout__next-page {
+	display: flex;
+	flex: 1 1 50px;
+	flex-direction: column;
+	gap: 4px;
+	padding: 12px 20px;
+	text-decoration: none;
+	border: 1px solid var(--frame-color);
+	border-radius: 8px;
+}
 
-  &:last-child
-    text-align: right
+.docs-layout__next-page:last-child {
+	text-align: right;
+}
 
-  &:hover
-    border-color: var(--text-tertiary-color)
+.docs-layout__next-page:hover {
+	border-color: var(--text-tertiary-color);
+}
 
-  .subtitle
-    color: var(--text-tertiary-color)
-    font-size: 13px
+.docs-layout__next-page .subtitle {
+	font-size: 13px;
+	color: var(--text-tertiary-color);
+}
 
-  .title
-    font-size: 14px
-    color: var(--text-color)
-    font-weight: 500
+.docs-layout__next-page .title {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-color);
+}
 
-  &.hidden
-    visibility: hidden
+.docs-layout__next-page.hidden {
+	visibility: hidden;
+}
 </style>

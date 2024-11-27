@@ -3,7 +3,7 @@ type ParserOptions = {
 	format?: Record<string, (str: string) => any>;
 };
 
-const removeDublicates = (sorted: number[]) => {
+const removeDoublicates = (sorted: number[]) => {
 	for (let i = 0; i < sorted.length - 1; i++) {
 		if (sorted[i] === sorted[i + 1]) {
 			sorted.splice(i + 1, 1);
@@ -15,7 +15,7 @@ const removeDublicates = (sorted: number[]) => {
 
 export const parseText = (str: string, options: ParserOptions) => {
 	const slices: Array<{ start: number; length: number; format?: any; replace?: any }> = [];
-	const charLength = removeDublicates(
+	const charLength = removeDoublicates(
 		[
 			...Object.keys(options.format ?? {}).map((item) => item.length),
 			...Object.keys(options.replace ?? {}).map((item) => item.length),
