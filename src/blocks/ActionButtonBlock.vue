@@ -16,6 +16,7 @@ defineBlock({
 });
 
 const dialogStore = useDialogStore();
+
 const openForm = () => {
 	dialogStore.open(SendRequestDialog);
 };
