@@ -53,18 +53,18 @@ src
 
 ```html
 <template>
-	<h1>{{ props.title }}</h1>
+  <h1>{{ props.title }}</h1>
 </template>
 
 <script lang="ts" setup>
-	const props = defineBlock({
-		id: 'H1',
-		props: {
-			title: {
-				type: 'string',
-				default: 'Заголовок',
-			},
-		},
-	});
+  const props = defineBlock({
+    id: 'H1',
+    props: {
+      title: {
+        type: 'string',
+        default: 'Заголовок',
+      },
+    },
+  });
 </script>
 ```
