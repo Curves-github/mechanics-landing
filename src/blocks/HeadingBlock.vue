@@ -1,124 +1,155 @@
 <template>
-  <DecorationContainer class="heading-block" markers>
-    <div class="heading-block__column">
-      <CurvesLabel />
-      <div class="heading-block__content">
-        <h1>{{ props.heading }}</h1>
-        <div class="subheading">{{ props.subheading }}</div>
-        <VButton @click="openForm">Запросить демо</VButton>
-      </div>
-    </div>
-    <div class="heading-block__column heading-block__video-column">
-      <video src="../assets/headingVideo.mp4" muted autoplay loop playsinline></video>
-    </div>
-  </DecorationContainer>
+	<DecorationContainer class="heading-block" markers>
+		<div class="heading-block__column">
+			<CurvesLabel />
+			<div class="heading-block__content">
+				<h1>{{ props.heading }}</h1>
+				<div class="subheading">{{ props.subheading }}</div>
+				<VButton @click="openForm">Запросить демо</VButton>
+			</div>
+		</div>
+		<div class="heading-block__column heading-block__video-column">
+			<video src="../assets/headingVideo.mp4" muted autoplay loop playsinline></video>
+		</div>
+	</DecorationContainer>
 </template>
 
 <script lang="ts" setup>
 import CurvesLabel from '../components/CurvesLabel.vue';
-import DecorationContainer from '../components/DecorationContainer.vue'
+import DecorationContainer from '../components/DecorationContainer.vue';
 import SendRequestDialog from '../components/dialogs/SendRequestDialog.vue';
 import VButton from '../components/VButton.vue';
 import { useDialogStore } from '../stores/dialogStore';
 
 const props = defineBlock({
-  id: "headingBlock",
-  props: {
-    heading: { type: "string", multiline: true },
-    subheading: { type: "string", multiline: true },
+	id: 'headingBlock',
+	props: {
+		heading: { type: 'string', multiline: true },
+		subheading: { type: 'string', multiline: true },
+	},
+});
 
-  }
-})
-
-const dialogStore = useDialogStore()
+const dialogStore = useDialogStore();
 const openForm = () => {
-  dialogStore.open(SendRequestDialog)
-}
-
-
+	dialogStore.open(SendRequestDialog);
+};
 </script>
 
-<style lang="sass">
-.heading-block
-  height: 580px
+<style lang="css">
+.heading-block {
+	height: 580px;
+}
 
-  .decoration-container__inner
-    display: flex
+.heading-block .decoration-container__inner {
+	display: flex;
+}
 
-  @media(max-width: 1250px)
-    height: 45vw
+@media (width <= 1250px) {
+	.heading-block {
+		height: 45vw;
+	}
+}
 
-  @media(max-width: 870px)
-    height: auto
-    text-align: center
-    .decoration-container__inner
-      flex-direction: column
+@media (width <= 870px) {
+	.heading-block {
+		height: auto;
+		text-align: center;
+	}
 
-.heading-block__column
-  border-left: 1px solid var(--frame-color)
-  flex: 1 1 50%
-  padding: 32px
-  padding-top: 24px
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  box-sizing: border-box
+	.heading-block .decoration-container__inner {
+		flex-direction: column;
+	}
+}
 
-  .curves-label
-    color: var(--text-tertiary-color)
-    margin-bottom: 12px
+.heading-block__column {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 1 50%;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 32px;
+	padding-top: 24px;
+	border-left: 1px solid var(--frame-color);
+}
 
-  &:first-child
-    border: none
+.heading-block__column .curves-label {
+	margin-bottom: 12px;
+	color: var(--text-tertiary-color);
+}
 
-  @media(max-width: 870px)
-    align-items: center
-    border: none
+.heading-block__column:first-child {
+	border: none;
+}
 
-.heading-block__content
-  margin: auto 0
-  padding-bottom: 40px
+@media (width <= 870px) {
+	.heading-block__column {
+		align-items: center;
+		border: none;
+	}
+}
 
-  @media(max-width: 1250px)
-    padding-bottom: 0
-  
-  h1
-    white-space: pre-wrap
-    font-size: 50px
-    margin: 0
-    line-height: 1.1em
-    letter-spacing: -0.06em
+.heading-block__content {
+	padding-bottom: 40px;
+	margin: auto 0;
+}
 
-    @media(max-width: 1250px)
-      font-size: 36px
-      line-height: 1.1em
-      letter-spacing: -0.06em
+@media (width <= 1250px) {
+	.heading-block__content {
+		padding-bottom: 0;
+	}
+}
 
-  .subheading
-    white-space: pre-wrap
-    font-size: 18px
-    letter-spacing: -0.04em
-    font-weight: 500
-    margin-top: 20px
+.heading-block__content h1 {
+	margin: 0;
+	font-size: 50px;
+	line-height: 1.1em;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
 
-    @media(max-width: 1250px)
-      font-size: 16px
-      letter-spacing: -0.06em
-      margin-top: 16px
+@media (width <= 1250px) {
+	.heading-block__content h1 {
+		font-size: 36px;
+		line-height: 1.1em;
+		letter-spacing: -0.06em;
+	}
+}
 
-  .v-button
-    margin-top: 32px
+.heading-block__content .subheading {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: -0.04em;
+	white-space: pre-wrap;
+}
 
-.heading-block__video-column
-  padding: 0
-  video
-    width: 100%
-    height: 100%
-    object-fit: cover
+@media (width <= 1250px) {
+	.heading-block__content .subheading {
+		margin-top: 16px;
+		font-size: 16px;
+		letter-spacing: -0.06em;
+	}
+}
 
-    @media(max-width: 870px)
-      max-width: 450px
-      max-height: 450px
-      margin: auto
+.heading-block__content .v-button {
+	margin-top: 32px;
+}
 
+.heading-block__video-column {
+	padding: 0;
+}
+
+.heading-block__video-column video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (width <= 870px) {
+	.heading-block__video-column video {
+		max-width: 450px;
+		max-height: 450px;
+		margin: auto;
+	}
+}
 </style>

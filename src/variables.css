@@ -1,0 +1,15 @@
+:root {
+	--primary-color: #0074c7;
+	--background-color: #fafafa;
+	--header-color: #fff;
+	--text-color: #171717;
+	--text-secondary-color: #666;
+	--text-tertiary-color: #969696;
+	--blocks-padding: 80px;
+	--frame-color: #d8d8d8;
+	--blocks-color: #f0f0f0;
+	--callout-background-color: rgb(0 116 199 / 10%);
+	--button-color: #171717;
+	--button-hover-color: #363636;
+	--button-pressed-color: #000;
+}

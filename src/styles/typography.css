@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'RF Dewi', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	src: url('./fonts/RFDewi-Semibold.woff2');
+	font-display: swap;
+}
+
+body,
+input,
+button,
+textarea,
+label {
+	font-family: Inter, sans-serif;
+	font-size: 14px;
+	font-optical-sizing: auto;
+	color: var(--text-color);
+}
+
+.heading,
+h1,
+h2,
+h3 {
+	font-family: 'RF Dewi', sans-serif;
+	font-weight: 500;
+	letter-spacing: -0.06em;
+}

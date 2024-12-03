@@ -1,61 +1,67 @@
 <template>
-  <component :is="component ?? 'button'" class="v-button" :class="{ disabled, flat, outline, large }">
-    <slot></slot>
-  </component>
+	<component
+		:is="component ?? 'button'"
+		class="v-button"
+		:class="{ disabled, flat, outline, large }">
+		<slot></slot>
+	</component>
 </template>
 
 <script lang="ts" setup>
-
-defineProps<{ 
-  component?: string,
-  disabled?: boolean, 
-  flat?: boolean, 
-  outline?: boolean, 
-  large?: boolean
-}>()
-
+defineProps<{
+	component?: string;
+	disabled?: boolean;
+	flat?: boolean;
+	outline?: boolean;
+	large?: boolean;
+}>();
 </script>
 
-<style lang="sass">
+<style lang="css">
+.v-button {
+	display: flex;
+	display: inline-flex;
+	flex-shrink: 0;
+	gap: 6px;
+	align-items: center;
+	justify-content: center;
+	height: 44px;
+	padding: 0 28px;
+	padding-bottom: 2px;
+	font-family: 'RF Dewi', sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+	letter-spacing: -0.04em;
+	background-color: var(--button-color);
+	border: none;
+	border-radius: 22px;
+}
 
-.v-button
-  background-color: var(--button-color)
-  height: 44px
-  color: white
-  font-weight: 600
-  font-family: "RF Dewi"
-  border-radius: 22px
-  font-size: 16px
-  padding: 0 28px
-  text-decoration: none
-  display: flex
-  justify-content: center
-  align-items: center
-  border: none
-  gap: 6px
-  display: inline-flex
-  letter-spacing: -0.04em
-  padding-bottom: 2px
-  flex-shrink: 0
+.v-button:hover {
+	background-color: var(--button-hover-color);
+}
 
-  &:hover
-    background-color: var(--button-hover-color)
-    
-  &:active 
-    background-color: var(--button-pressed-color)
+.v-button:active {
+	background-color: var(--button-pressed-color);
+}
 
-  &.disabled
-    opacity: 0.5
-    pointer-events: none
+.v-button.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
 
-  &:focus-visible
-    box-shadow: 0 0 0 4px #0D6EFD40
-  
-  &.color-red.outline
-    border-color: var(--error-color)
-    color: var(--error-color)
+.v-button:focus-visible {
+	box-shadow: 0 0 0 4px rgb(13 110 253 / 25%);
+}
 
-a.v-button
-  text-decoration: none
+.v-button.color-red.outline {
+	color: var(--error-color);
+	border-color: var(--error-color);
+}
 
+a.v-button {
+	text-decoration: none;
+}
 </style>
